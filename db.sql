@@ -14,7 +14,7 @@ create table usuario(
 `perfil` enum('0','1','2') not null default '0',
 `status` enum('A','I') not null default 'A',
 `nome` varchar(100) not null,
-`cpf_cnpj` varchar(14) not null,
+`cpf_cnpj` varchar(14) not null unique,
 `email` varchar(255) not null,
 `senha` varchar(255) not null,
 `telefone` varchar(11) not null
