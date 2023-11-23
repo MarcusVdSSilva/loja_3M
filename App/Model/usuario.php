@@ -7,7 +7,6 @@
         private $nome;
         private $cpf_cnpj;
         private $email;
-        private $senha;
         private $telefone;
         private $tabela = "usuario";
 
@@ -54,13 +53,6 @@
             $this->email = $email;
         }
 
-        public function getSenha(){
-            return $this->senha;
-        }
-        public function setSenha($senha){
-            $this->senha = $senha;
-        }
-
         public function getTelefone(){
             return $this->telefone;
         }
@@ -70,9 +62,9 @@
 
         //Metodos
 
-        //Consulta no banco
+        //Consulta no banco de todos usuarios
 		public function listar(){
-			$sql = "SELECT * FROM $this->tabela ORDER BY nome ASC";
+			$sql = "SELECT * FROM $this->tabela ORDER BY nome,perfil ASC";
 			$result = $this->conn->query($sql);
 			
 			if($result == true){
@@ -92,8 +84,7 @@
             $stmt->bind_param('sssss', $nome,$cpf_cnpj,$email,$senha,$telefone);
             $stmt->execute();
             if($stmt==true){
-                /*ALTERAR LINHA DE BAIXO */
-                header("Location: ../View/LOCALCOLOCARAQUI.php?sucess");
+                $this->logar($email,$senha);
                 return $stmt;
             }else{
                 /*ALTERAR LINHA DE BAIXO */
@@ -164,6 +155,76 @@
 			$stmt->close();
 			$this->conn->close();	
 		}
+
+        //Logar
+        public function logar($email,$senha){
+            $sql= "select * from $this->tabela where email = ? and senha = ?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param('ss', $email, $senha);
+            $stmt->execute();
+            $stmt->store_result();
+			
+			if($stmt->num_rows == 1){
+                $stmt->bind_result($id,$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senha);
+                $stmt->fetch();
+                
+                if($status=="A" && $perfil!=="0"){
+                    session_start();
+                    $_SESSION['logado'] = true;
+                    $_SESSION['id'] = $id;
+                
+                    //header("Location: ../View/clienteLogado.php");
+                }else{
+                    header('Location: login.php?error=acessonegado');
+                }
+				
+			}else{
+                echo "ERROR";
+                //header('Location: login.php?erro=login');
+			}
+			$stmt->close();
+			$this->conn->close();
+            
+        }
+
+        //Logar Cliente
+        public function logarcliente($email,$senha){
+            $sql= "select * from $this->tabela where email = ? and senha = ?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param('ss', $email, $senha);
+            $stmt->execute();
+            $stmt->store_result();
+			
+			if($stmt->num_rows == 1){
+                $stmt->bind_result($id,$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senha);
+                $stmt->fetch();
+                
+                if($status=="A" && $perfil=="0"){
+                    $dadosCliente = array(
+                    'id' => $id,
+                    'perfil' => $perfil,
+                    'status' => $status,
+                    'nome' => $nome,
+                    'cpf_cnpj' => $cpf_cnpj,
+                    'email' => $email,
+                    'telefone' => $telefone,
+                    'senha' => $senha
+                    );
+        
+                    echo json_encode($dadosCliente);
+                    
+                }else{
+                    echo("NULL");
+                }
+				
+			}else{
+                echo "ERROR";
+                //header('Location: login.php?erro=login');
+			}
+			$stmt->close();
+			$this->conn->close();
+            
+        }
 
 
     }

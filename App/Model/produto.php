@@ -46,9 +46,24 @@
 
         //Metodos
 
-        //Consulta no banco
+        //Consulta geral
 		public function listar(){
 			$sql = "SELECT * FROM $this->tabela ORDER BY nome ASC";
+			$result = $this->conn->query($sql);
+			
+			if($result == true){
+				return $result;
+                
+			}else{
+				die("Falha na consulta!");
+			}
+
+            $this->conn->close();
+		}
+        
+        //Consulta por id
+		public function consultaId($id){
+			$sql = "SELECT * FROM $this->tabela where id=$id";
 			$result = $this->conn->query($sql);
 			
 			if($result == true){
