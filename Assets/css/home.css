@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+:root {
+    --fonte-principal: 'Roboto', sans-serif;
+}
+
+ html {
+    height: 100vh;
+}
+
+body{
+    background-image: radial-gradient(circle, #24688D, #032C42);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+h1{
+   font-family: var(--fonte-principal); 
+   color: white;
+   text-align: center; 
+}
+
+h1 > span.logo {
+
+}
+
+div.form{
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+}
+
+div.form > div > span {
+    transform: translateY(7px);
+    margin-right: 10px;
+    font-size: 30px;
+    color: white;
+    
+    
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+div.form > div > input {
+    margin-bottom: 20px;
+    height: 25px;
+}
