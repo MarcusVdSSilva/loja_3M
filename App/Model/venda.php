@@ -41,7 +41,45 @@
 
         //Consulta no banco
 		public function listar(){
-			$sql = "SELECT * FROM $this->tabela ORDER BY `data` ASC";
+			$sql = "SELECT 
+            v.id as id_venda,
+            v.valor,
+            v.data,
+            u.nome as nome_usuario,
+            p.nome as nome_produto
+        FROM 
+            venda v
+        JOIN 
+            usuario u ON v.id_usuario = u.id
+        JOIN 
+            venda_produto vp ON v.id = vp.id_venda
+        JOIN 
+            produto p ON vp.id_produto = p.id
+        ORDER BY 
+            v.data DESC;
+        ";
+
+        //Consulta no banco vendas do cliente
+		public function listarVendaCliente($idCliente){
+			$sql = "SELECT 
+            v.id as id_venda,
+            v.valor,
+            v.data,
+            u.nome as nome_usuario,
+            p.nome as nome_produto
+        FROM 
+            venda v
+        JOIN 
+            usuario u ON v.id_usuario = u.id
+        JOIN 
+            venda_produto vp ON v.id = vp.id_venda
+        JOIN 
+            produto p ON vp.id_produto = p.id
+        WHERE 
+            v.id_usuario = $idCliente
+        ORDER BY 
+            v.data DESC;
+        ";
 			$result = $this->conn->query($sql);
 			
 			if($result == true){

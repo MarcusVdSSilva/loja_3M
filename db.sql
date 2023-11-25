@@ -6,7 +6,8 @@ create table produto(
 `nome` varchar(100) not null,
 `marca` varchar(100) not null,
 `preco` float not null,
-`foto` varchar(100) not null
+`foto` varchar(100) not null,
+`foto64` varchar(255) not null
 );
 
 create table usuario(

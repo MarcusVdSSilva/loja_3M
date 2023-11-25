@@ -15,9 +15,9 @@
                 $perfil = $_POST['perfil'];
                 
                 //TESTE DE CADASTRO NO BANCO
-                /*$nome = "funcionario b";
-                $cpf_cnpj = "019.109.200-29";
-                $email = "funcb@gmail.com";
+                /*$nome = "admin";
+                $cpf_cnpj = "039.169.230-29";
+                $email = "teste@gmail.com";
                 $senha = "123";
                 $telefone = "(51) 9 96111502";
                 $perfil = "1";*/

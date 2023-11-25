@@ -6,6 +6,7 @@
         private $marca;
         private $preco;
         private $foto;
+        private $foto64;
         private $tabela = "produto";
 
         //Getters e Setters
@@ -41,7 +42,14 @@
             return $this->foto;
         }
         public function setFoto($foto){
-            $this->preco = $foto;
+            $this->foto = $foto;
+        }
+
+        public function getFoto64(){
+            return $this->foto64;
+        }
+        public function setFoto64($foto64){
+            $this->foto64 = $foto64;
         }
 
         //Metodos
@@ -77,10 +85,10 @@
 		}
 
         //Cadastrar
-        public function cadastrar($nome,$marca,$preco,$foto){
-            $sql= "insert into $this->tabela(nome,marca,preco,foto) values(?,?,?,?)";
+        public function cadastrar($nome,$marca,$preco,$foto,$foto64){
+            $sql= "insert into $this->tabela(nome,marca,preco,foto,foto64) values(?,?,?,?,?)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->bind_param('ssss', $nome,$marca,$preco,$foto);
+            $stmt->bind_param('sssss', $nome,$marca,$preco,$foto,$foto64);
             $stmt->execute();
             if($stmt==true){
                 /*ALTERAR LINHA DE BAIXO */
@@ -96,12 +104,13 @@
 			$this->conn->close();	
         }
 
+        //FAZER A FOTO64 AKIIIIIIIIIII
         //Editar
-		public function editar($nome,$marca,$preco,$foto,$id){
-			$sql = "UPDATE $this->tabela SET nome = ? , marca = ?, preco = ?, foto = ?
+		public function editar($nome,$marca,$preco,$foto,$foto64,$id){
+			$sql = "UPDATE $this->tabela SET nome = ? , marca = ?, preco = ?, foto = ?, foto64 = ?
 			WHERE id = ?";
 			$stmt = $this->conn->prepare($sql);
-			$stmt->bind_param('ssssi',$nome,$marca,$preco,$foto,$id);
+			$stmt->bind_param('sssssi',$nome,$marca,$preco,$foto,$foto64,$id);
 			$stmt->execute();
 			
 			if($stmt == true){
