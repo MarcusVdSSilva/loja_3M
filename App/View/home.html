@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="../../Assets/css/home.css">
     <title>Lojas 3M - Interno</title>
 </head>
@@ -19,17 +20,17 @@
             <span class="material-symbols-outlined">key</span>
             <input type="text" name="senha" id="senha" placeholder="senha">
         </div>
-        <button>Entrar</button>
+        <button class="entrar">Entrar</button>
     </div>
-    <div class="images">
-        <img class="mySlides" src="../../Assets/img/modelo1.jpg">
-        <img class="mySlides" src="">
-        <img class="mySlides" src="">
-        <button class="botao-esquerdo" onclick="plusDivs(-1)"><span class="material-symbols-outlined">
-            arrow_forward_ios
-            </span></button>
-        <button class="botao-direito" onclick="plusDivs(1)">z;</button>
-      </div>
+    <div class="carrossel">
+        <div class="images">
+            <img class="mySlides" src="../../Assets/img/modelo1.png">
+            <img class="mySlides" src="../../Assets/img/modelo2.png">
+            <img class="mySlides" src="../../Assets/img/modelo3.png">
+        </div>
+        <button class="botao-esquerdo" onclick="plusDivs(-1)"><span class="material-symbols-outlined">arrow_back_ios</span></button>
+        <button class="botao-direito" onclick="plusDivs(1)"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
+      </div> 
       <script src="../../Assets/js/home.js"></script>
 </body>
 </html>
