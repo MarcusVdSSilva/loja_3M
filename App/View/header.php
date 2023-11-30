@@ -23,7 +23,7 @@
             <a href="cadastrarProdutos.php">Cadastrar produtos</a>
         </li>
         <li>
-            <a href="estoque.php">Ver estoques</a>
+            <a href="estoque.php">Ver estoque</a>
         </li>
     </ul> 
     
