@@ -6,17 +6,20 @@
             
 
     while($linha = $listar->fetch_assoc()){
-        $id = $linha['id'];
+        $id = $linha['id_venda'];
         $valor = $linha['valor'];
         $data = $linha['data'];
-        $idUsuario = $linha['id_usuario'];
+        $nomeCliente = $linha['nome_usuario'];
+        $produto = $linha['nome_produto'];
+        
         
         echo('
             <tr>
                 <td>' . $id . ' </td>
                 <td>' . $valor . ' </td>
                 <td>' . $data . ' </td>
-                <td>' . $idUsuario . ' </td>
+                <td>' . $nomeCliente . ' </td>
+                <td>' . $produto . ' </td>
             <tr>
         ');
 

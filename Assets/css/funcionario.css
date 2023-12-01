@@ -1,0 +1,16 @@
+form > div.container {
+    display: flex;
+    justify-content: center;
+}
+
+form > div.container > input {
+    font-size: 20px;
+    width: 80vw;
+    margin-top: 20px;
+}
+
+form > div.container > span {
+    margin-left: 10px;
+    margin-top: 22px;
+    color: darkgray;
+}

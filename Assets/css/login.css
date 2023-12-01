@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap');
+
+
+:root {
+    --fonte-principal: 'Roboto', sans-serif;
+    --fonte-logo: 'Teko', sans-serif;
+}
+
+ html {
+    height: 100vh;
+}
+
+body{
+    background-image: radial-gradient(circle, #24688D, #032C42);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+h1{
+   font-family: var(--fonte-principal); 
+   color: white;
+   text-align: center; 
+}
+
+h1 > span.logo {
+    font-size: 38px;
+    font-family: var(--fonte-logo);
+}
+
+div.form{
+    margin: auto;
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+    width: 94vw;
+}
+
+div.form > div > span {
+    margin-right: 10px;
+    transform: translateY(7px);
+    font-size: 30px;
+    color: white;
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+div.form > div > input {
+    margin-bottom: 20px;
+    height: 25px;
+    font-size: 18px;
+   
+}
+
+div.form > button {
+    background-image: linear-gradient(to right,  #FF8600, #8D4A00 );
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+    width: 150px;
+    box-shadow: 2px 2px 8px rgb(13, 13, 13, 0.616);
+    margin-bottom: 30px;
+}
+
+div.carrossel { 
+    display: flex;
+    justify-content: center;
+}
+
+div.carrossel > div.images {
+    display: block;
+    margin: 0px 20px 0px 0px;
+    box-shadow: 6px 6px 16px rgb(13, 13, 13, 0.616);
+}
+
+div.carrossel > div.images > img {
+    width: 100%;
+}
+
+div.carrossel > button {
+    background-color: transparent;
+    border: none;
+    color: rgb(65, 208, 255);
+}
+
+
+
+div.carrossel > button > span {
+    font-size: 45px;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    
+}
+
+.botao {
+    z-index: 2;
+    position: inherit;
+}
+
+.slideshow {
+    z-index: -1;
+}
+

@@ -23,7 +23,7 @@ nav > button {
     background-color: transparent;
     border: none;
     color: white;
-    
+   
 }
 
 nav > button > span {
@@ -52,7 +52,7 @@ nav > ul {
     left: 0%;
     top: 60px;
     height: calc(100vh - 60px);
-    width: 50vw;
+    width: 75vw;
     text-align: center;
 }
 

@@ -1,12 +1,12 @@
 <?php 
     require_once("conexao.php");
-    require_once("produto.php.php");
-    class usuario extends conexao{
+    require_once("produto.php");
+    class venda extends conexao{
         private $id;
         private $valor;
         private $data;
         private $produto;
-        private $tabela = "usuario";
+        private $tabela = "venda";
 
         //Getters e Setters
         public function getId(){
@@ -47,17 +47,29 @@
             v.data,
             u.nome as nome_usuario,
             p.nome as nome_produto
-        FROM 
-            venda v
-        JOIN 
-            usuario u ON v.id_usuario = u.id
-        JOIN 
-            venda_produto vp ON v.id = vp.id_venda
-        JOIN 
-            produto p ON vp.id_produto = p.id
-        ORDER BY 
-            v.data DESC;
-        ";
+            FROM 
+                venda v
+            JOIN 
+                usuario u ON v.id_usuario = u.id
+            JOIN 
+                venda_produto vp ON v.id = vp.id_venda
+            JOIN 
+                produto p ON vp.id_produto = p.id
+            ORDER BY 
+                v.data DESC
+            ";
+        
+            $result = $this->conn->query($sql);
+			
+			if($result == true){
+				return $result;
+                
+			}else{
+				die("Falha na consulta!");
+			}
+
+            $this->conn->close();
+        }
 
         //Consulta no banco vendas do cliente
 		public function listarVendaCliente($idCliente){
@@ -93,15 +105,24 @@
 		}
 
         //Cadastrar
-        public function cadastrar($valor,$data,$id_usuario){
+        public function cadastrar($valor,$data,$id_usuario,$id_produto){
             $sql= "insert into $this->tabela(valor,data,id_usuario) values(?,?,?)";
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param('sss', $valor,$data,$id_usuario);
             $stmt->execute();
             if($stmt==true){
-                /*ALTERAR LINHA DE BAIXO */
-                header("Location: ../View/LOCALCOLOCARAQUI.php?sucess");
-                return $stmt;
+                $id = $this->conn->insert_id;
+                require_once("venda_produto.php");
+
+                //SALVANDO NO BANCO
+
+                $produto = $id_produto;
+                
+                foreach ($produto as $item) {
+                    $venda_produto = new Venda_produto();
+                    $cadastrar = $venda_produto->cadastrar($id, $item);
+                }
+                
             }else{
                 /*ALTERAR LINHA DE BAIXO */
                 header("Location: ../View/LOCALCOLOCARAQUI.php?error");
@@ -109,7 +130,8 @@
             }
 
             $stmt->close();
-			$this->conn->close();	
+			$this->conn->close();
+            
         }
 
     }

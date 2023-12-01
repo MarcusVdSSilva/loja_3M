@@ -77,6 +77,21 @@
             $this->conn->close();
 		}
 
+        //Consulta por nome
+		public function consultaNome($nome){
+			$sql = "SELECT * FROM $this->tabela where nome like '%$nome%' ORDER BY nome,perfil ASC";
+			$result = $this->conn->query($sql);
+			
+			if($result == true){
+				return $result;
+                
+			}else{
+				die("Falha na consulta!");
+			}
+
+            $this->conn->close();
+		}
+
         //Cadastrar Lado Do Cliente
         public function cadastrarCliente($nome,$cpf_cnpj,$email,$senha,$telefone){
             $sql= "insert into $this->tabela(nome,cpf_cnpj,email,senha,telefone) values(?,?,?,?,?)";

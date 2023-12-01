@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         
         //SALVANDO NO BANCO
         $venda = new Venda();
-        $cadastrar = $venda->cadastrar($valor,$data,$id_usuario);
+        $cadastrar = $venda->cadastrar($valor,$data,$id_usuario,$produto);
     }
 
 }

@@ -2,7 +2,9 @@
     require("../../Model/usuario.php");
     $usuario = new Usuario();
 
-    $listar = $usuario->listar();
+    $nome=$_REQUEST['nome'];
+
+    $listar = $usuario->consultaNome($nome);
             
 
     while($linha = $listar->fetch_assoc()){

@@ -17,13 +17,13 @@
             <a href="home.php">Pagina inicial</a>
         </li>
         <li>
-            <a href="cadastrarFuncionario.php">Cadastrar funcionários</a>
+            <a href="funcionario.php">Funcionário</a>
         </li>
         <li>
-            <a href="cadastrarProdutos.php">Cadastrar produtos</a>
+            <a href="produto.php">Produtos</a>
         </li>
         <li>
-            <a href="estoque.php">Ver estoque</a>
+            <a href="estoque.php">Estoque</a>
         </li>
     </ul> 
     

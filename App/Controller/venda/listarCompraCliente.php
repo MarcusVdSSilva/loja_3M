@@ -1,22 +1,22 @@
 <?php
-    require('../../Model/produto.php');
+    require('../../Model/venda.php');
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){      
         if(isset($_POST['cliente'])){
             $informacoes=json_decode($_POST['cliente']);
             $idCliente = $informacoes->idCliente;
             
-            $produto = new Produto();
+            $venda = new Venda();
 
-            $listar = $produto->listarVendaCliente($idCliente);
+            $listar = $venda->listarVendaCliente($idCliente);
                     
-            $produtos = array();
+            $informacoesVenda = array();
 
             while($linha = $listar->fetch_assoc()){
-                $produtos[]=$linha;
+                $informacoesVenda[]=$linha;
             }
 
-            echo json_encode($produtos);
+            echo json_encode($informacoesVenda);
         }
     
     }
