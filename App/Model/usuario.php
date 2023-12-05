@@ -79,7 +79,12 @@
 
         //Consulta por nome
 		public function consultaNome($nome, $perfil){
-			$sql = "SELECT * FROM $this->tabela where perfil='$perfil' and nome like '%$nome%' ORDER BY nome,perfil ASC";
+            if($perfil==""){
+                $sql = "SELECT * FROM $this->tabela where nome like '%$nome%' ORDER BY nome,perfil ASC";
+            }else{
+                $sql = "SELECT * FROM $this->tabela where perfil='$perfil' and nome like '%$nome%' ORDER BY nome,perfil ASC";
+            }
+			
 			$result = $this->conn->query($sql);
 			
 			if($result == true){
@@ -182,13 +187,15 @@
 			if($stmt->num_rows == 1){
                 $stmt->bind_result($id,$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senha);
                 $stmt->fetch();
-                
+    
                 if($status=="A" && $perfil!=="0"){
                     session_start();
                     $_SESSION['logado'] = true;
                     $_SESSION['id'] = $id;
+                    $_SESSION['perfil'] = $perfil;
+                    $_SESSION['status'] = $status;
                 
-                    //header("Location: ../View/clienteLogado.php");
+                    header("Location: ../../View/home.php");
                 }else{
                     header('Location: login.php?error=acessonegado');
                 }

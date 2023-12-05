@@ -12,17 +12,19 @@
 </head>
 <body>
     <h1>LOJAS <span class="logo">3M</span></h1>
-    <div class="form">
-        <div>
-            <span class="material-symbols-outlined">mail</span>        
-            <input type="text" name="email" id="email" placeholder="email">
+    <form action="../Controller/usuario/logar.php?logar" method="post">
+        <div class="form">
+            <div>
+                <span class="material-symbols-outlined">mail</span>
+                <input type="text" name="email" id="email" placeholder="email">
+            </div>
+            <div>
+                <span class="material-symbols-outlined">key</span>
+                <input type="password" name="senha" id="senha" placeholder="senha">
+            </div>
+            <button class="entrar">Entrar</button>
         </div>
-        <div>
-            <span class="material-symbols-outlined">key</span>
-            <input type="text" name="senha" id="senha" placeholder="senha">
-        </div>
-        <button class="entrar">Entrar</button>
-    </div>
+    </form>
     <div class="carrossel">
         <button class="botao-esquerdo" onclick="plusDivs(-1)"><span class="material-symbols-outlined">arrow_back_ios</span></button>
         <div class="images">

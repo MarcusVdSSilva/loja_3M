@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+	if(isset($_SESSION['logado'])&& isset($_SESSION['status']) && isset($_SESSION['perfil'])){
+        if($_SESSION['perfil']=="2"){
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,9 +14,9 @@
     <title>Lojas 3M - Administrador</title>
 </head>
 <body>
-    <?php require_once("header.php");   
-    ?>
-    <form action="../Controller/usuario/consultaNome.php" method="get">
+    <?php require_once("header.php");?>
+
+    <form action="../Controller/usuario/consultaNome.php">
         
         <div class="container">
             <input type="text" placeholder="pesquisar" name="nome">
@@ -46,7 +52,29 @@
             <p>Editar funcionário</p>
         </div>
     </div>
+
+
+    <table>
+        <thead>
+
+        </thead>
+
+        <tbody>
+            <?php require_once("../Controller/usuario/listar.php");?>
+        </tbody>
+    </table>
+            
+
     <script src="../../Assets/js/jquery.js"></script>
     <script src="../../Assets/js/funcionario.js"></script>
 </body>
 </html>
+
+<?php 
+        }else{
+            header('Location: login.php');
+        }
+    }else{
+        header('Location: login.php');
+    }
+?>

@@ -1,5 +1,5 @@
 <?php
-    require("../../Model/usuario.php");
+    require("../Model/usuario.php");
     $usuario = new Usuario();
 
     $listar = $usuario->listar();
