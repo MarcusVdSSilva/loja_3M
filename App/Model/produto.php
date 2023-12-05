@@ -83,6 +83,21 @@
 
             $this->conn->close();
 		}
+        
+        //Consulta por nome
+		public function consultaNome($nome){
+			$sql = "SELECT * FROM $this->tabela where nome like '%$nome%'";
+			$result = $this->conn->query($sql);
+			
+			if($result == true){
+				return $result;
+                
+			}else{
+				die("Falha na consulta!");
+			}
+
+            $this->conn->close();
+		}
 
         //Cadastrar
         public function cadastrar($nome,$marca,$preco,$foto,$foto64){

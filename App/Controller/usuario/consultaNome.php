@@ -3,9 +3,9 @@
     $usuario = new Usuario();
 
     $nome=$_REQUEST['nome'];
+    $perfil = $_REQUEST['perfil'];
 
-    $listar = $usuario->consultaNome($nome);
-            
+    $listar = $usuario->consultaNome($nome,$perfil);
 
     while($linha = $listar->fetch_assoc()){
         $id = $linha['id'];

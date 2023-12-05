@@ -20,7 +20,7 @@
         
     }else{
         if($_SERVER['REQUEST_METHOD'] == "POST"){
-            if(isset($_POST['email']) && isset($_POST['senha'])){
+            if(isset($_POST['credenciais'])){
                 $credenciais=json_decode($_POST['credenciais']);
                 $email = $credenciais->email;
                 $senha = $credenciais->senha;

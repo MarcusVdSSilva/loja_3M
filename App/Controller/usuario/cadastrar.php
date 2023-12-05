@@ -4,32 +4,23 @@
     //SE FOR MANDADO VIA WEB
     
     if(isset($_GET['cadastro'])){
-        //if($_SERVER['REQUEST_METHOD'] == "POST"){
-            //if(isset($_POST['nome']) && isset($_POST['cpf_cnpj']) && isset($_POST['email']) && isset($_POST['senha']) && isset($_POST['telefone']) && isset($_POST['perfil'])){
+        if($_SERVER['REQUEST_METHOD'] == "POST"){
+            if(isset($_POST['nome']) && isset($_POST['cpf_cnpj']) && isset($_POST['email']) && isset($_POST['senha']) && isset($_POST['telefone']) && isset($_POST['perfil'])){
                 
-                // $nome = $_POST['nome'];
-                // $cpf_cnpj = $_POST['cpf_cnpj'];
-                // $email = $_POST['email'];
-                // $senha = $_POST['senha'];
-                // $telefone = $_POST['telefone'];
-                // $perfil = $_POST['perfil'];
+                $nome = $_POST['nome'];
+                $cpf_cnpj = $_POST['cpf_cnpj'];
+                $email = $_POST['email'];
+                $senha = $_POST['senha'];
+                $telefone = $_POST['telefone'];
+                $perfil = $_POST['perfil'];
                 
                 //TESTE DE CADASTRO NO BANCO
-<<<<<<< HEAD
                 // $nome = "admin";
                 // $cpf_cnpj = "039.169.230-29";
                 // $email = "teste@gmail.com";
                 // $senha = "123";
                 // $telefone = "(51) 9 96111502";
-                // $perfil = "1";
-=======
-                $nome = "admin";
-                $cpf_cnpj = "039.169.230-29";
-                $email = "teste@gmail.com";
-                $senha = "123";
-                $telefone = "(51) 9 96111502";
-                $perfil = "1";
->>>>>>> 73811bc303b762a60f35b143d6bb5bc6dfc0a75b
+                // $perfil = "2";
 
                 //FILTRO
                 $telefone = preg_replace("/\D/", "", "$telefone");

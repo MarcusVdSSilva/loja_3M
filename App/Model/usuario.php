@@ -78,8 +78,8 @@
 		}
 
         //Consulta por nome
-		public function consultaNome($nome){
-			$sql = "SELECT * FROM $this->tabela where nome like '%$nome%' ORDER BY nome,perfil ASC";
+		public function consultaNome($nome, $perfil){
+			$sql = "SELECT * FROM $this->tabela where perfil='$perfil' and nome like '%$nome%' ORDER BY nome,perfil ASC";
 			$result = $this->conn->query($sql);
 			
 			if($result == true){
