@@ -19,5 +19,34 @@
         </div>
     </form>
 
+    <div class="funcoes">
+        <div class="criar" id="criar">
+            <button class="criaFuncionario"><span>+</span></button>
+            <p>Cadastrar funcionário</p>
+        </div>
+        <div class="modalCriar" id="modalCriar">
+            <form action="../Controller/usuario/cadastrar.php" method="post">
+                <div class="nome">
+                    <input type="text" name="nome" id="nome">
+                    <label for="nome">Nome</label>
+                </div>
+                <div class="senha">
+                    <input type="text" name="senha" id="senha">
+                    <label for="senha">Senha</label>
+                </div>
+                <button class="cadastrarFuncionario">Cadastrar</button>
+            </form>
+        </div>
+        <div class="apagar">
+            <button class="apagaFuncionario"><span>x</span></button>
+            <p>Apagar funcionário</p>
+        </div>
+        <div class="editar">
+            <button class="editaFuncionario"><span>%</span></button>
+            <p>Editar funcionário</p>
+        </div>
+    </div>
+    <script src="../../Assets/js/jquery.js"></script>
+    <script src="../../Assets/js/funcionario.js"></script>
 </body>
 </html>

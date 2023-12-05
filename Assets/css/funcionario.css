@@ -14,3 +14,59 @@ form > div.container > span {
     margin-top: 22px;
     color: darkgray;
 }
+
+div.funcoes {
+    padding-top: 20px;
+    display: block;
+   margin: auto;
+   text-align: center;
+}
+
+div.funcoes > div {
+    margin: 30px auto;
+    width: 200px;
+    text-align: start;
+}
+
+div.funcoes > div > p {
+    display: inline-block;
+    font-size: 20px;
+    transform: translateY(2px);
+}
+
+div > div > button { 
+    background-color: black;
+    color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    padding: 0px 10px 15px 5px;
+}
+
+div > div > button > span {
+    display: block;
+}
+
+div.funcoes > div.criar > button.criaFuncionario > span {
+    transform: translateX(-1px);
+} 
+
+div.funcoes > div.editar > button.editaFuncionario > span {
+    transform: translateX(-3px);
+}
+
+div.funcoes > div.modalCriar {
+    display: none;
+    background-color: darkgray;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 50%;
+    height: 300px;
+    transform: translate(130px, -150px);
+    width: 250px;
+}
+
+div.funcoes > div.modalCriar > div.nome > input, label {
+    display: inline;
+}

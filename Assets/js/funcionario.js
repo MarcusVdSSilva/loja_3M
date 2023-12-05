@@ -1,0 +1,5 @@
+$("#criar").click(()=>{
+    $("#modalCriar").toggle();
+});
+
+
