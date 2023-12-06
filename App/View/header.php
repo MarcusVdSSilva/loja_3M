@@ -21,13 +21,16 @@
             <a href="home.php">Pagina inicial</a>
         </li>
         <li>
-            <a href="funcionario.php">Funcionário</a>
+            <a href="usuario.php">Usuario</a>
         </li>
         <li>
             <a href="produto.php">Produtos</a>
         </li>
         <li>
-            <a href="estoque.php">Estoque</a>
+            <a href="venda.php">Vendas</a>
+        </li>
+        <li>
+            <a href="../Controller/usuario/sair.php">Sair</a>"	
         </li>
     </ul> 
     
@@ -55,7 +58,10 @@
             <a href="produto.php">Produtos</a>
         </li>
         <li>
-            <a href="estoque.php">Estoque</a>
+            <a href="venda.php">Vendas</a>
+        </li>
+        <li>
+            <a href="../Controller/usuario/sair.php">Sair</a>"	
         </li>
     </ul> 
 </nav>

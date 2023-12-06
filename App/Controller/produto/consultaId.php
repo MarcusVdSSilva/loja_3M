@@ -1,16 +1,13 @@
 <?php
-    require('../../Model/produto.php');
+    require('../Model/produto.php');
     $produto = new Produto();
     
     //DESCRIPTOGRAFANDO ID
     $idCripto = $_GET['i'];
-    $idCriptografado = $idCripto;
-    for ($i=0; $i < 10; $i++) { 
-        $idCripto = base64_decode($idCripto);
-    }
+    $idCriptografado = base64_decode($idCripto);
     
 
-    $listar = $produto->consultaId($idCripto);
+    $listar = $produto->consultaId($idCriptografado);
 
     while($linha = $listar->fetch_assoc()){
         $nome = $linha['nome'];
@@ -22,7 +19,7 @@
         $fotoCripto = base64_encode($fotoCripto);
 
         echo('
-            <form action="editar.php?i='.$idCriptografado.'&f='.$fotoCripto.'" method="post" enctype="multipart/form-data">
+            <form action="../Controller/produto/editar.php?i='.$idCripto.'&f='.$fotoCripto.'" method="post" enctype="multipart/form-data">
                 
                 <label for="nome">Digite o nome do produto:</label>
                 <input type="text" name="nome" id="nome" value='.$nome.'>

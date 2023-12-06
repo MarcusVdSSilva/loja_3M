@@ -77,6 +77,21 @@
             $this->conn->close();
 		}
 
+        //Consulta no banco de todos usuarios
+		public function consultaId($id){
+			$sql = "SELECT * FROM $this->tabela where id=$id";
+			$result = $this->conn->query($sql);
+			
+			if($result == true){
+				return $result;
+                
+			}else{
+				die("Falha na consulta!");
+			}
+
+            $this->conn->close();
+		}
+
         //Consulta por nome
 		public function consultaNome($nome, $perfil){
             if($perfil==""){
@@ -124,11 +139,11 @@
             $stmt->execute();
             if($stmt==true){
                 /*ALTERAR LINHA DE BAIXO */
-                header("Location: ../View/LOCALCOLOCARAQUI.php?sucess");
+                header("Location: ../../View/usuario.php?sucess");
                 return $stmt;
             }else{
                 /*ALTERAR LINHA DE BAIXO */
-                header("Location: ../View/LOCALCOLOCARAQUI.php?error");
+                header("Location: ../../View/usuario.php?error");
                 die("Falha no Cadastro!");
             }
 
@@ -157,19 +172,19 @@
 		}
         
         //Editar Lado Do Administrador
-		public function editar($perfil,$status,$nome,$cpf_cnpj,$email,$senha,$telefone,$id){
-			$sql = "UPDATE $this->tabela SET perfil = ? , `status` = ? , nome = ? , cpf_cnpj = ? , email = ? , senha = ? , telefone = ? 
+		public function editar($perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$id){
+			$sql = "UPDATE $this->tabela SET perfil = ? , `status` = ? , nome = ? , cpf_cnpj = ? , email = ? , telefone = ? 
 			WHERE id = ?";
 			$stmt = $this->conn->prepare($sql);
-			$stmt->bind_param('sssssssi',$perfil,$status,$nome,$cpf_cnpj,$email,$senha,$telefone,$id);
+			$stmt->bind_param('ssssssi',$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$id);
 			$stmt->execute();
 			
 			if($stmt == true){
                 /*ALTERAR LINHA DE BAIXO */
-                header("Location: ../View/LOCALCOLOCARAQUI.php?sucess");
+                header("Location: ../../View/usuario.php?sucess");
 			}else{
                 /*ALTERAR LINHA DE BAIXO */
-                header("Location: ../View/LOCALCOLOCARAQUI.php?error");
+                header("Location: ../../View/usuario.php?error");
 				die("Falha no Processo!");
 			}
 			$stmt->close();

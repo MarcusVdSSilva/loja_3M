@@ -10,8 +10,8 @@
                 $email = $_REQUEST['email'];
                 $senha = $_REQUEST['senha'];
 
-                //Criptografia
-                $salt = md5('email');
+                //CRIPTOGRAFIA
+                $salt = md5('cpf');
                 $senhacript = crypt($senha,$salt);
                 $senha = hash('sha512',$senhacript);
                 
@@ -28,6 +28,11 @@
                 $credenciais=json_decode($_POST['credenciais']);
                 $email = $credenciais->email;
                 $senha = $credenciais->senha;
+
+                //CRIPTOGRAFIA
+                $salt = md5('cpf');
+                $senhacript = crypt($senha,$salt);
+                $senha = hash('sha512',$senhacript);
 
                 //Salvando no banco
                 $usuario = new Usuario();

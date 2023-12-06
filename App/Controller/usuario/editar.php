@@ -3,30 +3,37 @@
 
     //SE FOR MANDADO VIA WEB
     
-    if(isset($_GET['cadastro'])){
+    if(isset($_GET['editar'])){
+        
         if($_SERVER['REQUEST_METHOD'] == "POST"){
-            if(isset($_POST['nome']) && isset($_POST['cpf_cnpj']) && isset($_POST['email']) && isset($_POST['senha']) && isset($_POST['telefone']) && isset($_POST['perfil']) && $id = $_POST['id']){
+            
+            if(isset($_POST['nome']) && isset($_POST['cpf_cnpj']) && isset($_POST['email']) && isset($_POST['telefone']) && isset($_POST['perfil']) && isset($_POST['status'])){
+               
                 
-                $id = $_POST['id'];
+                $id = $_GET['i'];
+                $id= base64_decode($id);
+                
+
+
                 $nome = $_POST['nome'];
                 $cpf_cnpj = $_POST['cpf_cnpj'];
                 $email = $_POST['email'];
-                $senha = $_POST['senha'];
                 $telefone = $_POST['telefone'];
                 $perfil = $_POST['perfil'];
+                $status = $_POST['status'];
 
                 //FILTRO
                 $telefone = preg_replace("/\D/", "", "$telefone");
                 $cpf_cnpj = preg_replace("/\D/", "", "$cpf_cnpj");
 
                 //CRIPTOGRAFIA
-                $salt = md5('email');
+                $salt = md5('cpf');
                 $senhacript = crypt($senha,$salt);
                 $senha = hash('sha512',$senhacript);
 
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();
-                $editar = $usuario->editar($perfil,$status,$nome,$cpf_cnpj,$email,$senha,$telefone,$id);
+                $editar = $usuario->editar($perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$id);
             }
         
         }
@@ -47,6 +54,11 @@
                 //FILTRO
                 $telefone = preg_replace("/\D/", "", "$telefone");
                 $cpf_cnpj = preg_replace("/\D/", "", "$cpf_cnpj");
+
+                //CRIPTOGRAFIA
+                $salt = md5('cpf');
+                $senhacript = crypt($senha,$salt);
+                $senha = hash('sha512',$senhacript);
 
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();

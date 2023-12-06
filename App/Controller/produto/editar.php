@@ -30,9 +30,7 @@
 
             //DESCRIPTOGRAFANDO IF
             $id = $_GET['i'];
-            for ($i=0; $i < 10; $i++) { 
-                $id = base64_decode($id);
-            }
+            $id = base64_decode($id);
 
             //DESCRIPTOGRAFANDO CAMINHO DA IMAGEM PARA APAGAR
             $fotoApagar = $_GET['f'];

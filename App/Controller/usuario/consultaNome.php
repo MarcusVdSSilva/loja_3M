@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
 <?php
     require("../../Model/usuario.php");
     $usuario = new Usuario();
@@ -41,7 +43,7 @@
                 <td>' . $cpf_cnpj . '</td>
                 <td>' . $email . '</td>
                 <td>' . $telefone . '</td>
-                <td><a href="CAMINHO AQUI.php?><span class="material-symbols-outlined">edit</span></a></td>
+                <td><a href="CAMINHO AQUI.php?"><span class="material-symbols-outlined">edit</span></a></td>
             </tr>
             ');
             

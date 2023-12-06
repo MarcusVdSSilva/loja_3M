@@ -1,22 +1,23 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
 <?php
-    require('../../Model/produto.php');
+    require('../Model/produto.php');
     $produto = new Produto();
 
     $listar = $produto->listar();
-            
-    if(isset($_GET["listar"])){
+
         while($linha = $listar->fetch_assoc()){
             $id = $linha['id'];
             $nome = $linha['nome'];
             $marca = $linha['marca'];
             $preco = $linha['preco'];
             $foto = $linha['foto'];
+            $parteARemover = "../";
+            $novoCaminho = str_replace($parteARemover, "", $foto);
 
             //CRIPTOGRAFANDO ID
-            $idCripto = $id;
-            for ($i=0; $i < 10; $i++) { 
-                $idCripto = base64_encode($idCripto);
-            }
+            $idCripto = base64_encode($id);
+            
             
             echo('
                 <tr>
@@ -24,22 +25,12 @@
                     <td>' . $nome . ' </td>
                     <td>' . $marca . ' </td>
                     <td>' . $preco . ' </td>
-                    <td> <img src="'.$foto.'" alt="imagem do produto" </td>
-                    <td> <a href="consultaId.php?i='.$idCripto.'">Icone</a> </td>
+                    <td> <img src="../../'.$novoCaminho.'" alt="imagem do produto" </td>
+                    <td> <a href="editarProduto.php?i='.$idCripto.'"><span class="material-symbols-outlined">edit</span></a> </td>
+                    
                 <tr>
             ');
             
         }
-        
-    }else{  
-        
-        $produtos = array();
-
-        while($linha = $listar->fetch_assoc()){
-            $produtos[]=$linha;
-        }
-
-        echo json_encode($produtos);
-    }
     
 ?>

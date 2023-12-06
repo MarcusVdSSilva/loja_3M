@@ -107,11 +107,11 @@
             $stmt->execute();
             if($stmt==true){
                 /*ALTERAR LINHA DE BAIXO */
-                header("Location: ../View/LOCALCOLOCARAQUI.php?sucess");
+                header("Location: ../../View/produto.php?sucess");
                 return $stmt;
             }else{
                 /*ALTERAR LINHA DE BAIXO */
-                header("Location: ../View/LOCALCOLOCARAQUI.php?error");
+                header("Location: ../../View/produto.php?error");
                 die("Falha no Cadastro!");
             }
 
@@ -130,10 +130,10 @@
 			
 			if($stmt == true){
                 /*ALTERAR LINHA DE BAIXO */
-                header("Location: ../View/LOCALCOLOCARAQUI.php?sucess");
+                header("Location: ../../View/produto.php?sucess");
 			}else{
                 /*ALTERAR LINHA DE BAIXO */
-                header("Location: ../View/LOCALCOLOCARAQUI.php?error");
+                header("Location: ../../View/produto.php?error");
 				die("Falha no Processo!");
 			}
 			$stmt->close();

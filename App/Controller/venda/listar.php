@@ -1,5 +1,5 @@
 <?php
-    require('../../Model/venda.php');
+    require('../Model/venda.php');
     $venda = new Venda();
 
     $listar = $venda->listar();

@@ -27,16 +27,16 @@
                 $cpf_cnpj = preg_replace("/\D/", "", "$cpf_cnpj");
 
                 //CRIPTOGRAFIA
-                $salt = md5('email');
+                $salt = md5('cpf');
                 $senhacript = crypt($senha,$salt);
                 $senha = hash('sha512',$senhacript);
 
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();
                 $cadastrar = $usuario->cadastrar($perfil,$nome,$cpf_cnpj,$email,$senha,$telefone);
-           // }
+            }
         
-        //}
+        }
         
     }else{
         //SE FOR MANDADO VIA MOBILE
@@ -53,6 +53,11 @@
                 //FILTRO
                 $telefone = preg_replace("/\D/", "", "$telefone");
                 $cpf_cnpj = preg_replace("/\D/", "", "$cpf_cnpj");
+
+                //CRIPTOGRAFIA
+                $salt = md5('cpf');
+                $senhacript = crypt($senha,$salt);
+                $senha = hash('sha512',$senhacript);
 
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();

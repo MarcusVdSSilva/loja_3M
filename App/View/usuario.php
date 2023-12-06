@@ -17,16 +17,17 @@
     <?php require_once("header.php");?>
 
     <form id="consultaForm">
-        <input type+="text" name="nome" id="nome">
+        <input type="text" name="nome" id="nome">
         <select name="perfil">
             <option value="" selected>Todos</option>
             <option value="0">Clientes</option>
             <option value="1">Funcionarios</option>
             <option value="2">Administradores</option>
         </select>
-        <button type="submit">ICONE AKI</button>
+        <button type="submit"><span class="material-symbols-outlined">search</span></button>
     </form>
 
+    <button type="button" id="btnAdcUser">Adicionar +</button>
 
     <table>
         <thead>
@@ -42,34 +43,36 @@
             <?php require_once("../Controller/usuario/listar.php");?>
         </tbody>
     </table>
+
+    <?php require_once("modals.php");?>
             
 
     <script src="../../Assets/js/jquery.js"></script>
-    <script src="../../Assets/js/funcionario.js"></script>
+    <script src="../../Assets/js/modal.js"></script>
     <script>
         $(document).ready(function() {
-            $("#consultaForm").submit(function(event) {
-                event.preventDefault();
+        $("#consultaForm").submit(function(event) {
+        event.preventDefault();
 
-                // pegando dados do form
-                var formData = $(this).serialize();
+        // pegando dados do form
+        var formData = $(this).serialize();
 
-                // Enviando a requisição AJAX
-                $.ajax({
-                    type: "GET",
-                    url: "../Controller/usuario/consultaNome.php",
-                    data: formData,
-                    success: function(response) {
-                        $("tbody").html(response);
-                    },
-                    error: function(error) {
-                        console.log("Erro na requisição AJAX:", error);
-                    }
-                });
-            });
+        // Enviando a requisição AJAX
+        $.ajax({
+            type: "GET",
+            url: "../Controller/usuario/consultaNome.php",
+            data: formData,
+            success: function(response) {
+                $("tbody").html(response);
+            },
+            error: function(error) {
+                console.log("Erro na requisição AJAX:", error);
+            }
         });
-</script>
-</body>
+    });
+});
+    </script>
+    </body>
 </html>
 
 <?php 
