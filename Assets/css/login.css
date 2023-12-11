@@ -73,6 +73,7 @@ div.carrossel {
 
 div.carrossel > div.images {
     display: block;
+    transform: translateX(10px);
     margin: 0px 20px 0px 0px;
     box-shadow: 6px 6px 16px rgb(13, 13, 13, 0.616);
 }
@@ -91,6 +92,10 @@ div.carrossel > button {
 
 div.carrossel > button > span {
     font-size: 45px;
+}
+
+div.carrossel > button > span.direita{
+    transform: translateX(10px);
 }
 
 .mySlides {

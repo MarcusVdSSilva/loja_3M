@@ -32,7 +32,7 @@
             <img class="mySlides" src="../../Assets/img/modelo2.png">
             <img class="mySlides" src="../../Assets/img/modelo3.png">
         </div>
-        <button class="botao-direito" onclick="plusDivs(1)"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
+        <button class="botao-direito" onclick="plusDivs(1)"><span class="material-symbols-outlined direita">arrow_forward_ios</span></button>
     </div> 
       <script src="../../Assets/js/home.js"></script>
 </body>

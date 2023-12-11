@@ -1,0 +1,93 @@
+@media screen and (min-width: 768px) and (max-width: 1025px) {
+    h1 {
+        font-size: 42px;
+    }
+
+    h1 > span.logo {
+        font-size: 48px;
+    }
+
+    div.form {
+        margin-top: 10vh;
+    }
+
+   
+
+    div.form > div > input {
+        font-size: 25px;
+        height: 27px;
+        width: 60%;
+    }
+
+    div.form > div > span {
+        font-size: 35px;
+    }
+
+    div.form > button {
+        font-size: 20px;
+        width: 300px;
+        padding: 10px;
+        margin-bottom: 100px;
+    }
+
+    div.carrossel > div.images {
+    width: 400px;
+    }
+
+    div.carrossel > button > span {
+        font-size: 100px;
+    }
+
+    div.carrossel > button > span.direita{
+        transform: translateX(30px);
+    }
+}
+
+@media screen and (min-width: 1026px){
+    h1 {
+        font-size: 42px;
+    }
+
+    h1 > span.logo {
+        font-size: 48px;
+    }
+
+    div.form {
+        margin-top: 10vh;
+    }
+
+    div.form > div{
+    transform: translateX(-20px);
+
+}
+
+    div.form > div > input {
+        font-size: 25px;
+        height: 30px;
+        width: 25%;
+    }
+
+    div.form > div > span {
+        font-size: 35px;
+    }
+
+    div.form > button {
+        font-size: 20px;
+        width: 300px;
+        padding: 10px;
+        margin-bottom: 100px;
+    }
+
+    div.carrossel > div.images {
+    width: 400px;
+    }
+
+    div.carrossel > button > span {
+        font-size: 70px;
+    }
+
+    div.carrossel > button > span.direita{
+        transform: translateX(30px);
+    }
+   
+}
