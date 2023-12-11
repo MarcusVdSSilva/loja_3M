@@ -16,6 +16,7 @@
         $cpf_cnpj = $linha['cpf_cnpj'];
         $email = $linha['email'];
         $telefone = $linha['telefone'];
+        $senha = $linha['senha'];
         $idCripto = base64_encode($id);
         
         echo'
@@ -33,6 +34,11 @@
                 <div>
                     <label for="email">email</label>
                     <input type="text" name="email" id="email" value="'.$email.'">
+                </div>
+                
+                <div>
+                    <label for="email">Senha</label>
+                    <input type="text" name="senha" id="senha" value="'.$senha.'">
                 </div>
                 
                 <div>
