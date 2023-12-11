@@ -13,8 +13,8 @@
 <body>
     <h1>LOJAS <span class="logo">3M</span></h1>
     <form action="../Controller/usuario/logar.php?logar" method="post">
-        <div class="form">
-            <div>
+        <div class="form" translate="no">
+            <div >
                 <span class="material-symbols-outlined">mail</span>
                 <input type="text" name="email" id="email" placeholder="email">
             </div>
