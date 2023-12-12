@@ -13,11 +13,6 @@ header("Access-Control-Allow-Headers: Content-Encoding");
                 
                 $email = $_REQUEST['email'];
                 $senha = $_REQUEST['senha'];
-
-                //CRIPTOGRAFIA
-                $salt = md5('cpf');
-                $senhacript = crypt($senha,$salt);
-                $senha = hash('sha512',$senhacript);
                 
                 //Salvando no banco
                 $usuario = new Usuario();
@@ -32,11 +27,6 @@ header("Access-Control-Allow-Headers: Content-Encoding");
                 $credenciais=json_decode($_POST['credenciais']);
                 $email = $credenciais->email;
                 $senha = $credenciais->senha;
-
-                //CRIPTOGRAFIA
-                $salt = md5('cpf');
-                $senhacript = crypt($senha,$salt);
-                $senha = hash('sha512',$senhacript);
 
                 //Salvando no banco
                 $usuario = new Usuario();
