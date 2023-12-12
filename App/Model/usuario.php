@@ -204,7 +204,7 @@
                 $stmt->fetch();
 
                 if(!password_verify($senha, $senhaHash)){
-                    header('Location: ../../View/login.php?error=acessonegado');
+                    //header('Location: ../../View/login.php?error=acessonegado');
                     echo("$senha   hash  $senhaHash");
                     
                     return;
