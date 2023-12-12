@@ -1,3 +1,10 @@
+<?php 
+    session_start();
+    if(isset($_SESSION['logado'])){echo"entrou";
+        header('Location: home.php');
+    }else{
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -37,3 +44,7 @@
       <script src="../../Assets/js/home.js"></script>
 </body>
 </html>
+
+<?php 
+    }
+?>
