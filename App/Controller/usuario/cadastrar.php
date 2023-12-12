@@ -40,12 +40,12 @@
     }else{
         //SE FOR MANDADO VIA MOBILE
         if($_SERVER['REQUEST_METHOD'] == "POST"){
-            if(isset($_POST['cadastrarCliente'])){
+            if(isset($_POST['cadastrarCliente']) && isset($_POST["senha"])){
                 $informacoes = json_decode($_POST['cadastrarCliente']);
                 $nome = $informacoes->nome;
-                $cpf_cnpj = $informacoes->cpf_cnpj;
+                $cpf_cnpj = $informacoes->cpfCnpj;
                 $email = $informacoes->email;
-                $senha = $informacoes->senha;
+                $senha = $_POST["senha"];
                 $telefone = $informacoes->telefone;
 
                 
