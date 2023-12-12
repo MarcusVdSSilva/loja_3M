@@ -18,7 +18,7 @@
 
    
         <form id="consultaForm" class="center">
-            <input type="text" name="nome" id="nome">
+            <input type="text" name="nome" id="nome" placeholder="Busca por nome">
             <select name="perfil">
                 <option value="" selected>Todos</option>
                 <option value="0">Clientes</option>
@@ -36,6 +36,7 @@
                 <th>CPF</th>
                 <th>E-mail</th>
                 <th>Telefone</th>
+                <th>Editar</th>
             </thead>
             <tbody>
                 <?php require_once("../Controller/usuario/listar.php");?>
