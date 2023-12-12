@@ -204,7 +204,7 @@
                 $stmt->fetch();
 
                 if(!password_verify($senha, $senhaHash)){
-                    header('Location: login.php?error=acessonegado');
+                    header('Location: ../../View/login.php?error=acessonegado');
                     return;
                 }
     
@@ -217,7 +217,7 @@
                 
                     header("Location: ../../View/home.php");
                 }else{
-                    header('Location: login.php?error=acessonegado');
+                    header('Location: ../../View/login.php?error=acessonegado');
                 }
 				
 			}else{
