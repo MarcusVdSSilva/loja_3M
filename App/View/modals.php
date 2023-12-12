@@ -7,12 +7,12 @@
 
     </div>
 
-    <form class="formModal" id="cadastrar" action="../Controller/cadastrarBarbeiro.php" method="post" autocomplete="off">
-        <input type="text" name="" id="" placeholder="Nome">
-        <input type="text" name="" id="" placeholder="Telefone">
-        <input type="text" name="" id="" placeholder="CPF">
-        <input type="text" name="" id="" placeholder="E-mail">
-        <input type="password" name="" id="" placeholder="Senha">
+    <form class="formModal" id="cadastrar" action="../Controller/usuario/cadastrar.php?cadastro" method="post" autocomplete="off">
+        <input type="text" name="nome" id="" placeholder="Nome">
+        <input type="text" name="telefone" id="" placeholder="Telefone">
+        <input type="text" name="cpf_cnpj" id="" placeholder="CPF">
+        <input type="text" name="email" id="" placeholder="E-mail">
+        <input type="password" name="senha" id="" placeholder="Senha">
         <select name="perfil">
             <option value="0">Cliente</option>
             <option value="1">Funcionario</option>
@@ -44,13 +44,12 @@
 
     </div>
 
-    <form class="formModal" id="cadastrar" action="../Controller/cadastrarBarbeiro.php" method="post" autocomplete="off">
-        <input type="text" name="" id="" placeholder="Nome">
-
-        <input type="text" name="" id="" placeholder="Marca">
-        <input type="text" name="" id="" placeholder="Preço">
-        
-        <input type="file" name="" id="" accept=".png, .jpg, .">
+    <form class="formModal" id="cadastrar" action="../Controller/produto/cadastrar.php" method="post" autocomplete="off" enctype="multipart/form-data">
+        <input type="text" name="nome" id="" placeholder="Nome">
+        <input type="text" name="marca" id="" placeholder="Marca">
+        <input type="text" name="preco" id="" placeholder="Preço">
+        <input type="file" id="fileInput" name="imagem" class="custom-file-input" accept=".png, .jpg">
+    
 
         <button type="submit">Cadastrar</button>
     </form>
