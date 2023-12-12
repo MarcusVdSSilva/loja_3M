@@ -3,13 +3,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
 <?php 
-    if($_SESSION['perfil']=="2"){
+    // if($_SESSION['perfil']=="2"){
 ?>
 
-<nav class="navbar">
+<nav class="navbar" translate="no">
         
     <button id="dropdown" type="button">
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined" >
             menu
         </span>
     </button>
@@ -37,9 +37,9 @@
 </nav>
 
 <?php 
-    }else if($_SESSION['perfil']=="1"){
+    // }else if($_SESSION['perfil']=="1"){
 ?>
-
+<!-- 
 <nav class="navbar">
         
     <button id="dropdown" type="button">
@@ -65,9 +65,9 @@
         </li>
     </ul> 
 </nav>
-
+ -->
 <?php 
-    }
+    // }
 ?>
 
 <script src="../../Assets/js/jquery.js"></script>

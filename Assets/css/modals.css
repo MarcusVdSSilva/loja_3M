@@ -1,0 +1,124 @@
+div.modal{
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    width: 80%;
+    padding: 15px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.574);
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+div.modal > div.modal-content > div.close{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+div.modal > div.modal-content > div.close > span.btnClose{
+    cursor: pointer;
+}
+
+div.modal{
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    width: 80%;
+    padding: 15px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.574);
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+div.modal > div.modal-content > div.close{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+div.modal > div.modal-content > div.close > span.btnClose{
+    cursor: pointer;
+}
+
+div.modal {
+    display: none;
+}
+
+.botaoFechar {
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    left: calc(41.3% + 20vw);
+    top: 50%;
+    transform: translateY(-190px);
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    font-weight: bold;
+    color: white;
+    font-size: 7px;
+    width: 20px;
+    padding: 5px;
+}
+
+form.formModal {
+    border: 1px solid black;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    margin: auto;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    background-color: lightgray;
+    transform: translate(-10vw, -190px);
+}
+
+ form.formModal > input {
+    height: 30px;
+    display: block;
+    font-size: 18px;
+    margin: 20px;
+    width: 20vw;
+    text-align: start;
+} 
+
+form.formModal > button {
+    color: white;
+    background-color: #0C3D57;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    position: relative;
+    bottom: 15px;
+    width: 10vw;
+}
+
+form.formModal > select {
+    transform: translateY(-12px);
+}
