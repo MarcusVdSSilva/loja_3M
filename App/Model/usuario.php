@@ -267,7 +267,7 @@
                 }
 				
 			}else{
-                echo "ERROR";
+                echo "ERROR não achou";
                 //header('Location: login.php?erro=login');
 			}
 			$stmt->close();
