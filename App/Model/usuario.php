@@ -195,7 +195,7 @@
         public function logar($email,$senha){
             $sql= "select * from $this->tabela where email = ? ";
             $stmt = $this->conn->prepare($sql);
-            $stmt->bind_param('ss', $email, $senha);
+            $stmt->bind_param('s', $email);
             $stmt->execute();
             $stmt->store_result();
 			
@@ -233,7 +233,7 @@
         public function logarcliente($email,$senha){
             $sql= "select * from $this->tabela where email = ? ";
             $stmt = $this->conn->prepare($sql);
-            $stmt->bind_param('ss', $email, $senha);
+            $stmt->bind_param('s', $email);
             $stmt->execute();
             $stmt->store_result();
 			
