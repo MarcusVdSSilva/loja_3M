@@ -33,7 +33,7 @@
 
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();
-                $editar = $usuario->editar($perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$$hashedPassword,$id);
+                $editar = $usuario->editar($perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$hashedPassword,$id);
             }
         
         }

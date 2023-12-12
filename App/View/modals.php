@@ -7,7 +7,7 @@
 
     </div>
 
-    <form class="formModal" id="cadastrar" action="../Controller/cadastrarBarbeiro.php" method="post" autocomplete="off">
+    <form class="formModal" id="cadastrar" action="../Controller/usuario/cadastrar.php?cadastro" method="post" autocomplete="off">
         <input type="text" name="" id="" placeholder="Nome">
 
         <input type="text" name="" id="" placeholder="CPF">

@@ -173,7 +173,7 @@
         
         //Editar Lado Do Administrador
 		public function editar($perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senha,$id){
-			$sql = "UPDATE $this->tabela SET perfil = ? , `status` = ? , nome = ? , cpf_cnpj = ? , email = ? , telefone = ? 
+			$sql = "UPDATE $this->tabela SET perfil = ? , `status` = ? , nome = ? , cpf_cnpj = ? , email = ? , telefone = ?, senha = ?
 			WHERE id = ?";
 			$stmt = $this->conn->prepare($sql);
 			$stmt->bind_param('sssssssi',$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senha,$id);
