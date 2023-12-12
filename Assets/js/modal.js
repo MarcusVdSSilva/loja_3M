@@ -20,3 +20,28 @@ $(".modal").click(function(e){
         
     }
 });
+ 
+// produto
+
+$("#btnAdcProd").click(()=>{
+    $("#produto").show();
+    $("#produto").css("display","flex");
+})
+
+
+//Fechar Modals
+
+//com click no botão
+$(".btnClose").click(()=>{
+    $("#produto").hide();
+  
+    
+})
+
+//com click fora
+$(".modal").click(function(e){
+    if ($(e.target).hasClass("modal")) {
+        $("#produto").hide();
+        
+    }
+});

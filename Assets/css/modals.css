@@ -10,21 +10,15 @@ div.modal{
     background-color: rgba(0,0,0,0.4); 
 }
 
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    width: 80%;
-    padding: 15px;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.574);
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-}
 
-div.modal > div.modal-content > div.close{
-    display: flex;
-    align-items: end;
-    justify-content: end;
+div.modal >  div.close{
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    left: calc(41.5% + 20vw);
+    top: 50%;
+    transform: translateY(-190px);
+  
 }
 
 div.modal > div.modal-content > div.close > span.btnClose{
@@ -69,15 +63,10 @@ div.modal {
 }
 
 .botaoFechar {
-    cursor: pointer;
-    position: absolute;
-    z-index: 2;
-    left: calc(41.3% + 20vw);
-    top: 50%;
-    transform: translateY(-190px);
+    
     border: none;
     border-radius: 5px;
-    background-color: red;
+    
     font-weight: bold;
     color: white;
     font-size: 7px;
