@@ -2,9 +2,8 @@
     require('../../Model/venda.php');
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){      
-        if(isset($_POST['cliente'])){
-            $informacoes=json_decode($_POST['cliente']);
-            $idCliente = $informacoes->idCliente;
+        if(isset($_POST['usuarioId'])){
+            $idCliente = $informacoes->usuarioId;
             
             $venda = new Venda();
 

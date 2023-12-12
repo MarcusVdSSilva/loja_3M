@@ -31,10 +31,10 @@
 
         //Metodos
         //Cadastrar
-        public function cadastrar($id_venda,$id_produto){
-            $sql= "insert into $this->tabela(id_venda,id_produto) values(?,?)";
+        public function cadastrar($id_venda,$id_produto, $quantidade){
+            $sql= "insert into $this->tabela(id_venda,id_produto,quantidade) values(?,?,?)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->bind_param('ss', $id_venda,$id_produto);
+            $stmt->bind_param('ssi', $id_venda,$id_produto);
             $stmt->execute();
             if($stmt==true){
                 
