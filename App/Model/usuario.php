@@ -193,15 +193,20 @@
 
         //Logar
         public function logar($email,$senha){
-            $sql= "select * from $this->tabela where email = ? and senha = ?";
+            $sql= "select * from $this->tabela where email = ? ";
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param('ss', $email, $senha);
             $stmt->execute();
             $stmt->store_result();
 			
 			if($stmt->num_rows == 1){
-                $stmt->bind_result($id,$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senha);
+                $stmt->bind_result($id,$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senhaHash);
                 $stmt->fetch();
+
+                if(!password_verify($senha, $senhaHash)){
+                    header('Location: login.php?error=acessonegado');
+                    return;
+                }
     
                 if($status=="A" && $perfil!=="0"){
                     session_start();
@@ -226,16 +231,16 @@
 
         //Logar Cliente
         public function logarcliente($email,$senha){
-            $sql= "select * from $this->tabela where email = ? and senha = ?";
+            $sql= "select * from $this->tabela where email = ? ";
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param('ss', $email, $senha);
             $stmt->execute();
             $stmt->store_result();
 			
 			if($stmt->num_rows == 1){
-                $stmt->bind_result($id,$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senha);
+                $stmt->bind_result($id,$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senhaHash);
                 $stmt->fetch();
-                
+
                 if($status=="A" && $perfil=="0"){
                     $dadosCliente = array(
                     'id' => $id,
@@ -245,10 +250,15 @@
                     'cpf_cnpj' => $cpf_cnpj,
                     'email' => $email,
                     'telefone' => $telefone,
-                    'senha' => $senha
+                    'senha' => $senhaHash
                     );
-        
-                    echo json_encode($dadosCliente);
+
+                    if(password_verify($senha, $senhaHash)){
+                        echo json_encode($dadosCliente);
+                    }
+                    else{
+                        echo("NULL");
+                    }
                     
                 }else{
                     echo("NULL");
