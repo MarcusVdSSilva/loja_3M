@@ -37,11 +37,6 @@
                 </div>
                 
                 <div>
-                    <label for="email">Senha</label>
-                    <input type="text" name="senha" id="senha" value="'.$senha.'">
-                </div>
-                
-                <div>
                     <label for="telefone">Telefone</label>
                     <input type="text" name="telefone" id="telefone" value="'.$telefone.'">
                 </div>

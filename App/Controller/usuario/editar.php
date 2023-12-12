@@ -7,7 +7,7 @@
         
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             
-            if(isset($_POST['nome']) && isset($_POST['cpf_cnpj']) && isset($_POST['email']) && isset($_POST['telefone']) && isset($_POST['perfil']) && isset($_POST['status']) && isset($_POST['senha'])){
+            if(isset($_POST['nome']) && isset($_POST['cpf_cnpj']) && isset($_POST['email']) && isset($_POST['telefone']) && isset($_POST['perfil']) && isset($_POST['status'])){
                
                 
                 $id = $_GET['i'];
@@ -21,19 +21,14 @@
                 $telefone = $_POST['telefone'];
                 $perfil = $_POST['perfil'];
                 $status = $_POST['status'];
-                $senha = $_POST['senha'];
 
                 //FILTRO
                 $telefone = preg_replace("/\D/", "", "$telefone");
                 $cpf_cnpj = preg_replace("/\D/", "", "$cpf_cnpj");
 
-                //CRIPTOGRAFIA
-                $password = $senha;
-                $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();
-                $editar = $usuario->editar($perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$hashedPassword,$id);
+                $editar = $usuario->editar($perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$id);
             }
         
         }
