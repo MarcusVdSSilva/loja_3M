@@ -42,8 +42,6 @@
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             if(isset($_POST['cadastrarCliente']) && isset($_POST["senha"])){
 
-                throw new Exception("Entrei aqui!!!!");
-
                 $informacoes = json_decode($_POST['cadastrarCliente']);
                 $nome = $informacoes->nome;
                 $cpf_cnpj = $informacoes->cpfCnpj;
@@ -66,8 +64,6 @@
 
                 return;
             }
-        }else{
-            throw new Exception("Entrei depois!!!!");
         }
 
         
