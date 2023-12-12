@@ -8,32 +8,35 @@
 
 <nav class="navbar" translate="no">
         
-    <button id="dropdown" type="button">
-        <span class="material-symbols-outlined" >
-            menu
-        </span>
-    </button>
+    <div class="mobile">
+        <button id="dropdown" type="button">
+            <span class="material-symbols-outlined" >
+                menu
+            </span>
+        </button>
+        
+        <h1>LOJAS <span class="logo">3M</span></h1>
+         <ul id="dropdownMenu" class="dropdownMenu">
+            <li>
+                <a href="home.php">Pagina inicial</a>
+            </li>
+            <li>
+                <a href="usuario.php">Usuario</a>
+            </li>
+            <li>
+                <a href="produto.php">Produtos</a>
+            </li>
+            <li>
+                <a href="venda.php">Vendas</a>
+            </li>
+            <li>
+                <a href="../Controller/usuario/sair.php">Sair</a>"
+            </li>
+        </ul>
+    </div>
     
-    <h1>LOJAS <span class="logo">3M</span></h1>
-   
-     <ul id="dropdownMenu" class="dropdownMenu">
-        <li>
-            <a href="home.php">Pagina inicial</a>
-        </li>
-        <li>
-            <a href="usuario.php">Usuario</a>
-        </li>
-        <li>
-            <a href="produto.php">Produtos</a>
-        </li>
-        <li>
-            <a href="venda.php">Vendas</a>
-        </li>
-        <li>
-            <a href="../Controller/usuario/sair.php">Sair</a>"	
-        </li>
-    </ul> 
     
+
 </nav>
 
 <?php 
