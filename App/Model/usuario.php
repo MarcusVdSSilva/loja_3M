@@ -259,7 +259,7 @@
                         echo json_encode($dadosCliente);
                     }
                     else{
-                        echo("NULL");
+                        echo("NULL senha errada");
                     }
                     
                 }else{
