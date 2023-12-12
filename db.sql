@@ -16,7 +16,7 @@ create table usuario(
 `status` enum('A','I') not null default 'A',
 `nome` varchar(100) not null,
 `cpf_cnpj` varchar(14) not null unique,
-`email` varchar(255) not null,
+`email` varchar(255) not null unique,
 `senha` varchar(255) not null,
 `telefone` varchar(11) not null
 
