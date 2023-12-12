@@ -25,7 +25,6 @@ header("Access-Control-Allow-Headers: Content-Encoding");
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             if(isset($_POST['credenciais'])){
 
-                throw new Exception("entrei");
                 $credenciais=json_decode($_POST['credenciais']);
                 $email = $credenciais->email;
                 $senha = $credenciais->senha;
