@@ -1,9 +1,9 @@
 <?php 
     abstract Class conexao{
-        private $servidor = 'localhost';
-        private $user = 'root';
-        private $pass = '';
-        private $banco = 'loja_3M';
+        private $servidor = 'mysql.memsolucoestecnologicas.com.br';
+        private $user = 'memsolucoestec';
+        private $pass = 'KingHost2023';
+        private $banco = 'memsolucoestec';
         public $conn;
 
         public function __construct(){

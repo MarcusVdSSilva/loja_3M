@@ -32,6 +32,7 @@ foreign key (`id_usuario`) references usuario(`id`)
 
 create table venda_produto(
 `id` int primary key auto_increment,
+`quantidade` int not null default 1,
 `id_produto` int,
 `id_venda` int,
 foreign key (`id_produto`) references produto(`id`),

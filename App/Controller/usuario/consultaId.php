@@ -32,13 +32,8 @@
                 </div>
                 
                 <div>
-                    <label for="email">email</label>
+                    <label for="email">E-mail</label>
                     <input type="text" name="email" id="email" value="'.$email.'">
-                </div>
-                
-                <div>
-                    <label for="email">Senha</label>
-                    <input type="text" name="senha" id="senha" value="'.$senha.'">
                 </div>
                 
                 <div>

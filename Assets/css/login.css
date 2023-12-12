@@ -83,6 +83,7 @@ div.carrossel > div.images > img {
 }
 
 div.carrossel > button {
+    cursor: pointer;
     background-color: transparent;
     border: none;
     color: rgb(65, 208, 255);

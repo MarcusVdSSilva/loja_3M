@@ -1,0 +1,27 @@
+table {
+    text-align: center;
+    border: 1px solid rgb(3, 0, 51);
+    margin: auto;
+    margin-top: 30px;
+}
+
+table > thead {
+    display: block;
+}
+
+table > thead > tr {
+    width: 100px;
+}
+
+table > thead > tr > th {
+    width: 150px;
+}
+
+tbody {
+    display: block;
+}
+
+table > tbody > tr > td {
+    
+     width: 150px;
+}

@@ -172,11 +172,11 @@
 		}
         
         //Editar Lado Do Administrador
-		public function editar($perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senha,$id){
-			$sql = "UPDATE $this->tabela SET perfil = ? , `status` = ? , nome = ? , cpf_cnpj = ? , email = ? , telefone = ? 
+		public function editar($perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$id){
+			$sql = "UPDATE $this->tabela SET perfil = ? , `status` = ? , nome = ? , cpf_cnpj = ? , email = ? , telefone = ?
 			WHERE id = ?";
 			$stmt = $this->conn->prepare($sql);
-			$stmt->bind_param('sssssssi',$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senha,$id);
+			$stmt->bind_param('ssssssi',$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$id);
 			$stmt->execute();
 			
 			if($stmt == true){
