@@ -8,11 +8,11 @@
     </div>
 
     <form class="formModal" id="cadastrar" action="../Controller/usuario/cadastrar.php?cadastro" method="post" autocomplete="off">
-        <input type="text" name="" id="" placeholder="Nome">
-        <input type="text" name="" id="" placeholder="Telefone">
-        <input type="text" name="" id="" placeholder="CPF">
-        <input type="text" name="" id="" placeholder="E-mail">
-        <input type="password" name="" id="" placeholder="Senha">
+        <input type="text" name="nome" id="" placeholder="Nome">
+        <input type="text" name="telefone" id="" placeholder="Telefone">
+        <input type="text" name="cpf_cnpj" id="" placeholder="CPF">
+        <input type="text" name="email" id="" placeholder="E-mail">
+        <input type="password" name="senha" id="" placeholder="Senha">
         <select name="perfil">
             <option value="0">Cliente</option>
             <option value="1">Funcionario</option>
