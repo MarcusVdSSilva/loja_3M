@@ -10,4 +10,6 @@
     } else {
         echo "O arquivo não existe.";
     }
+
+    //Apagar foto aham
 ?>
