@@ -200,11 +200,13 @@
             $stmt->store_result();
 			
 			if($stmt->num_rows == 1){
-                $stmt->bind_result($id,$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senhaHash);
+                $stmt->bind_result($id,$perfil,$status,$nome,$cpf_cnpj,$email,$senhaHash,$telefone);
                 $stmt->fetch();
 
                 if(!password_verify($senha, $senhaHash)){
-                    header('Location: login.php?error=acessonegado');
+                    //header('Location: ../../View/login.php?error=acessonegado');
+                    echo("$senha   hash  $senhaHash");
+                    
                     return;
                 }
     
@@ -217,7 +219,7 @@
                 
                     header("Location: ../../View/home.php");
                 }else{
-                    header('Location: login.php?error=acessonegado');
+                    header('Location: ../../View/login.php?error=acessonegado');
                 }
 				
 			}else{
