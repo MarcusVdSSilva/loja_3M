@@ -53,18 +53,13 @@ header("Access-Control-Allow-Headers: Content-Encoding");
                 $senha = $_POST["senha"];
                 $telefone = $informacoes->telefone;
 
-                
-                //FILTRO
-                $telefone = preg_replace("/\D/", "", "$telefone");
-                $cpf_cnpj = preg_replace("/\D/", "", "$cpf_cnpj");
-
                 //CRIPTOGRAFIA
                 $password = $senha;
                 $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();
-                $cadastrar = $usuario->cadastrarCliente($nome,$cpf_cnpj,$email,$$hashedPassword,$telefone);
+                $cadastrar = $usuario->cadastrarCliente($nome,$cpf_cnpj,$email,$hashedPassword,$telefone);
 
                 return;
             }
