@@ -2,7 +2,7 @@
     abstract Class conexao{
         private $servidor = 'mysql.memsolucoestecnologicas.com.br';
         private $user = 'memsolucoestec';
-        private $pass = 'KingHost2023';
+        private $pass = 'Loja3M';
         private $banco = 'memsolucoestec';
         public $conn;
 

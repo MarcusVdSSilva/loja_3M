@@ -32,7 +32,7 @@
 
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();
-                $cadastrar = $usuario->cadastrar($perfil,$nome,$cpf_cnpj,$email,$$hashedPassword,$telefone);
+                $cadastrar = $usuario->cadastrar($perfil,$nome,$cpf_cnpj,$email,$hashedPassword,$telefone);
             }
         
         }
@@ -54,9 +54,8 @@
                 $cpf_cnpj = preg_replace("/\D/", "", "$cpf_cnpj");
 
                 //CRIPTOGRAFIA
-                $salt = md5('cpf');
-                $senhacript = crypt($senha,$salt);
-                $senha = hash('sha512',$senhacript);
+                $password = $senha;
+                $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();

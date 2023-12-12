@@ -38,3 +38,5 @@ create table venda_produto(
 foreign key (`id_produto`) references produto(`id`),
 foreign key (`id_venda`) references venda(`id`)
 );
+
+create table venda()
