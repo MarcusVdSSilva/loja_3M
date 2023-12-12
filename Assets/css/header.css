@@ -15,12 +15,15 @@
 
 nav {
     background-image: linear-gradient(to right, #24688d, #032c42);
+}
+
+nav > div {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-nav > button {
+nav > div > button {
     padding-right: 10px;
     background-color: transparent;
      border: none; 
@@ -29,12 +32,12 @@ nav > button {
    
 }
 
-nav > button > span {
+nav > div > button > span {
     
     font-size: 60px !important; 
 }
 
-nav > h1{
+nav > div > h1{
     text-align: center;
     flex: 1;
     transform: translate(-25px, 0px);
@@ -43,12 +46,12 @@ nav > h1{
     font-size: 30px;
  }
  
- nav > h1 > span.logo {
+ nav > div > h1 > span.logo {
      font-size: 35px;
      font-family: var(--fonte-logo);
  }
 
-nav > ul {
+nav > div > ul {
     display: none;
     position: absolute;
     background-color: #0c4767;
@@ -59,11 +62,11 @@ nav > ul {
     text-align: center;
 }
 
-nav > ul > li {
+nav > div > ul > li {
     padding: 25px;
 }
 
-nav > ul > li > a {
+nav > div > ul > li > a {
     font-size: 20px;
     text-decoration: none;
     color: white;

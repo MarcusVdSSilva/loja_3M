@@ -32,7 +32,7 @@
                 </div>
                 
                 <div>
-                    <label for="email">email</label>
+                    <label for="email">E-mail</label>
                     <input type="text" name="email" id="email" value="'.$email.'">
                 </div>
                 
