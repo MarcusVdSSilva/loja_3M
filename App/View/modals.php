@@ -49,8 +49,8 @@
 
         <input type="text" name="" id="" placeholder="Marca">
         <input type="text" name="" id="" placeholder="Preço">
-        <input type="file" id="fileInput" class="custom-file-input" accept=".png, .jpg, " onchange="updateLabel()">
-      
+        
+        <input type="file" name="" id="" accept=".png, .jpg, .">
 
         <button type="submit">Cadastrar</button>
     </form>

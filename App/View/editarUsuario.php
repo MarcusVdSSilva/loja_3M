@@ -16,7 +16,7 @@
 <body>
     <?php require_once("header.php");?>
 
-    <?php require_once("../Controller/usuario/consultaId.php");?>
+    <div class="editar"><?php require_once("../Controller/usuario/consultaId.php");?></div>
 
     <script src="../../Assets/js/jquery.js"></script>
     <script src="../../Assets/js/modal.js"></script>
