@@ -1,4 +1,4 @@
-("#btnAdcUser").click(()=>{
+$("#btnAdcUser").click(()=>{
     $("#usuario").show();
     $("#usuario").css("display","flex");
 })
@@ -8,7 +8,7 @@
 
 //com click no botão
 $(".btnClose").click(()=>{
-    $("#pousada").hide();
+    $("#usuario").hide();
   
     
 })
@@ -16,7 +16,7 @@ $(".btnClose").click(()=>{
 //com click fora
 $(".modal").click(function(e){
     if ($(e.target).hasClass("modal")) {
-        $("#pousada").hide();
+        $("#usuario").hide();
         
     }
 });
