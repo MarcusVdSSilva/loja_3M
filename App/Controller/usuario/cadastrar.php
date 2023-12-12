@@ -66,7 +66,12 @@
 
                 return;
             }
+        }else{
+            throw new Exception("Entrei depois!!!!");
         }
+
+        
+
     }
 
     
