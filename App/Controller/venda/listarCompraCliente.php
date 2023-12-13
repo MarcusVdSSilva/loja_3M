@@ -37,7 +37,7 @@ require('../../Model/venda_produto.php');
 
             }
 
-            echo(json_encode($informacoesVenda));
+
         }
     
     }
