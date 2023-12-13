@@ -51,12 +51,10 @@ header("Access-Control-Allow-Headers: Content-Encoding");
                 $email = $informacoes->email;
                 $senha = $_POST["senha"];
                 $telefone = $informacoes->telefone;
-
+                    
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();
                 $cadastrar = $usuario->cadastrarCliente($nome,$cpf_cnpj,$email,$senha,$telefone);
-
-                return;
             }
         }
 

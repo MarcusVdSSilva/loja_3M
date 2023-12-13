@@ -232,7 +232,7 @@
                 // }
 				
 			}else{
-                echo "ERROR";
+                echo "ERROR ".$sql;
                 //header('Location: login.php?erro=login');
 			}
 			$stmt->close();
