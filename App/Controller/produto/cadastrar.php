@@ -13,6 +13,7 @@
             $preco = $_POST['preco'];
 
             $nomeArquivo = $_FILES["imagem"]["name"];
+            $imagem = $_FILES["imagem"]["name"];
             $diretorioImagens = "../../../Assets/img/img_produtos/";
 
             $foto = $diretorioImagens . $nomeArquivo;
@@ -28,7 +29,12 @@
 
             move_uploaded_file($_FILES['imagem']["tmp_name"],$foto);
 
-            $image64 = base64_encode(file_get_contents($foto));
+            $image64 = base64_encode(file_get_contents($imagem));
+
+            echo($image64);
+
+            $image64 = base64_encode(file_get_contents($foto));            
+            echo($image64);
             
             //SALVANDO NO BANCO
             $produto = new Produto();
