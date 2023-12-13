@@ -20,9 +20,9 @@ require('../../Model/venda_produto.php');
             }
 
             foreach($informacoesVenda as $infoVenda){
-                echo($infoVenda);
+                $vendaCliente = json_decode(json_encode($infoVenda));
                 $produto = new venda_produto();
-                $infoVenda->produtos = $produto->listar($infoVenda->id);
+                $vendaCliente->produtos = $produto->listar($vendaCliente->id);
             }
         }
     
