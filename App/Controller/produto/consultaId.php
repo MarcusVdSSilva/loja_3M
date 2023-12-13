@@ -24,7 +24,6 @@ header("Access-Control-Allow-Headers: Content-Encoding");
 
         $parteARemover = "../";
         $novoCaminho = str_replace($parteARemover, "", $foto);
-        echo $foto;
         echo '<img src="../../'.$novoCaminho.'" alt="imagem do produto">';
 
         echo('
