@@ -10,7 +10,7 @@ public class CtrLogin {
 
     public static void logarUsuario(String email, String senha){
 
-        CtrLogin.usuario = ServLogin.logarUsuario(email,senha);
+        CtrLogin.usuario = ServLogin.logarUsuario(email,Biblioteca.codificarSenha(senha));
 
     }
 

@@ -53,10 +53,6 @@ header("Access-Control-Allow-Headers: Content-Encoding");
                 $senha = $_POST["senha"];
                 $telefone = $informacoes->telefone;
 
-                //CRIPTOGRAFIA
-                $password = $senha;
-                $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();
                 $cadastrar = $usuario->cadastrarCliente($nome,$cpf_cnpj,$email,$hashedPassword,$telefone);
