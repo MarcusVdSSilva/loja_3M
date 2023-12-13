@@ -119,6 +119,7 @@
             $stmt->bind_param('sssss', $nome,$cpf_cnpj,$email,$senha,$telefone);
             $stmt->execute();
             if($stmt==true){
+                echo($sql.$nome.$cpf_cnpj.$email.$senha.$telefone);
                 $this->logar($email,$senha);
                 return $stmt;
             }else{
@@ -172,12 +173,21 @@
 		}
         
         //Editar Lado Do Administrador
-		public function editar($perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$id){
-			$sql = "UPDATE $this->tabela SET perfil = ? , `status` = ? , nome = ? , cpf_cnpj = ? , email = ? , telefone = ?
-			WHERE id = ?";
-			$stmt = $this->conn->prepare($sql);
-			$stmt->bind_param('ssssssi',$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$id);
-			$stmt->execute();
+		public function editar($perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senha,$id){
+            if($senha==""){
+                $sql = "UPDATE $this->tabela SET perfil = ? , `status` = ? , nome = ? , cpf_cnpj = ? , email = ? , telefone = ?
+                WHERE id = ?";
+                $stmt = $this->conn->prepare($sql);
+                $stmt->bind_param('ssssssi',$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$id);
+                $stmt->execute();
+            }else{
+                $sql = "UPDATE $this->tabela SET perfil = ? , `status` = ? , nome = ? , cpf_cnpj = ? , email = ? , telefone = ?, senha = ?
+                WHERE id = ?";
+                $stmt = $this->conn->prepare($sql);
+                $stmt->bind_param('sssssssi',$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senha,$id);
+                $stmt->execute();
+            }
+			
 			
 			if($stmt == true){
                 /*ALTERAR LINHA DE BAIXO */
@@ -223,7 +233,7 @@
                 // }
 				
 			}else{
-                echo "ERROR";
+                echo "ERROR ".$sql.$email;
                 //header('Location: login.php?erro=login');
 			}
 			$stmt->close();

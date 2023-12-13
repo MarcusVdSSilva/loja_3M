@@ -1,5 +1,6 @@
 <?php 
     require_once("conexao.php");
+    require_once("venda.php");
     class venda_produto extends conexao{
         private $id;
         private $id_produto;
@@ -31,10 +32,10 @@
 
         //Metodos
         //Cadastrar
-        public function cadastrar($id_venda,$id_produto, $quantidade){
+        public function cadastrar($id_venda, $produto){
             $sql= "insert into $this->tabela(id_venda,id_produto,quantidade) values(?,?,?)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->bind_param('ssi', $id_venda,$id_produto);
+            $stmt->bind_param('ssi', $id_venda,$produto->id, $produto->quantidade);
             $stmt->execute();
             if($stmt==true){
                 
@@ -48,5 +49,37 @@
 			$this->conn->close();
             
         }
+		public function listar($idVenda){
+			$sql = 
+            "SELECT ".
+            "  PRO.id, ".
+            "  PRO.nome, ".
+            "  PRO.marca, ".
+            "  PRO.preco, ".
+            "  PRO.foto64, ".
+            "  VDP.quantidade ".
+
+            "FROM $this->tabela VDP ". 
+
+            "INNER JOIN produto PRO ".
+            "ON VDP.id_produto = PRO.id ". 
+
+            "INNER JOIN venda VND ".
+            "ON VDP.id_venda = VND.id ".
+            "WHERE VND.id= ".$idVenda;
+            
+			$result = $this->conn->query($sql);
+			
+			if($result == true){
+				return $result;
+                
+			}else{
+				die("Falha na consulta venda produto! - ". $idVenda);
+			}
+
+            $this->conn->close();
+		}
+        
+
     }
 ?>

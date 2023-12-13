@@ -25,7 +25,7 @@ create table usuario(
 create table venda(
 `id` int primary key auto_increment,
 `valor` float not null,
-`data` timestamp not null,
+`data` timestamp not null default CURRENT_TIMESTAMP,
 `id_usuario` int,
 foreign key (`id_usuario`) references usuario(`id`)
 );

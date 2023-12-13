@@ -77,16 +77,11 @@
             v.id as id_venda,
             v.valor,
             v.data,
-            u.nome as nome_usuario,
-            p.nome as nome_produto
+            1 as produtos
         FROM 
             venda v
         JOIN 
             usuario u ON v.id_usuario = u.id
-        JOIN 
-            venda_produto vp ON v.id = vp.id_venda
-        JOIN 
-            produto p ON vp.id_produto = p.id
         WHERE 
             v.id_usuario = $idCliente
         ORDER BY 
@@ -105,22 +100,20 @@
 		}
 
         //Cadastrar
-        public function cadastrar($valor,$data,$id_usuario,$id_produto){
-            $sql= "insert into $this->tabela(valor,data,id_usuario) values(?,?,?)";
+        public function cadastrar($valor,$id_usuario, $produtos){
+            $sql= "insert into $this->tabela(valor,id_usuario) values(?,?)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->bind_param('sss', $valor,$data,$id_usuario);
+            $stmt->bind_param('ss', $valor,$id_usuario);
             $stmt->execute();
             if($stmt==true){
                 $id = $this->conn->insert_id;
                 require_once("venda_produto.php");
 
                 //SALVANDO NO BANCO
-
-                $produto = $id_produto;
                 
-                foreach ($produto as $item) {
+                foreach($produtos as $item) {
                     $venda_produto = new Venda_produto();
-                    $cadastrar = $venda_produto->cadastrar($id, $item);
+                    $venda_produto->cadastrar($id, $item);
                 }
                 
             }else{

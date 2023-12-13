@@ -25,14 +25,19 @@ header("Access-Control-Allow-Headers: Content-Encoding");
                 $telefone = $_POST['telefone'];
                 $perfil = $_POST['perfil'];
                 $status = $_POST['status'];
+                $senha = $_POST['senha'];
 
                 //FILTRO
                 $telefone = preg_replace("/\D/", "", "$telefone");
                 $cpf_cnpj = preg_replace("/\D/", "", "$cpf_cnpj");
 
+                //CRIPTOGRAFIA
+                $password = $senha;
+                $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();
-                $editar = $usuario->editar($perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$id);
+                $editar = $usuario->editar($perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$hashedPassword,$id);
             }
         
         }
