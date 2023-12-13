@@ -46,12 +46,13 @@ header("Access-Control-Allow-Headers: Content-Encoding");
             if(isset($_POST['cadastrarCliente']) && isset($_POST["senha"])){
 
                 $informacoes = json_decode($_POST['cadastrarCliente']);
+                echo(json_encode($informacoes));
                 $nome = $informacoes->nome;
                 $cpf_cnpj = $informacoes->cpfCnpj;
                 $email = $informacoes->email;
                 $senha = $_POST["senha"];
                 $telefone = $informacoes->telefone;
-                    
+
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();
                 $cadastrar = $usuario->cadastrarCliente($nome,$cpf_cnpj,$email,$senha,$telefone);
