@@ -1,5 +1,6 @@
 <?php 
     require_once("conexao.php");
+    require_once("venda.php");
     class venda_produto extends conexao{
         private $id;
         private $id_produto;
