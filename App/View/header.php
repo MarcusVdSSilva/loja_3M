@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="../../Assets/css/headerMQ.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
 
 <?php 
     // if($_SESSION['perfil']=="2"){
@@ -36,22 +37,30 @@
         </ul>
     </div>
     <ul id="menuResponsivo" class="menuResponsivo">
-            <li>
-                <a href="home.php">Pagina inicial <span class="material-symbols-outlined preenchido">
+            <li class="link">
+                <a href="home.php" id="home" class="cor">Pagina inicial <span class="material-symbols-outlined preenchido">
 home
 </span></a>
             </li>
-            <li>
-                <a href="usuario.php">Usuario</a>
+            <li class="link">
+                <a href="usuario.php" class="cor">Usuario <span class="material-symbols-outlined">
+person
+</span></a>
             </li>
-            <li>
-                <a href="produto.php">Produtos</a>
+            <li class="link">
+                <a href="produto.php" class="cor">Produtos <span class="material-symbols-outlined">
+shopping_basket
+</span></a>
             </li>
-            <li>
-                <a href="venda.php">Vendas</a>
+            <li class="link">
+                <a href="venda.php" class="cor">Vendas <span class="material-symbols-outlined">
+point_of_sale
+</span></a>
             </li>
-            <li>
-                <a href="../Controller/usuario/sair.php">Sair</a>"
+            <li class="link">
+                <a href="../Controller/usuario/sair.php" class="cor">Sair<span class="material-symbols-outlined power">
+power_settings_new
+</span></a>
             </li>
         </ul>
 

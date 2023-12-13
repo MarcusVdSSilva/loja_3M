@@ -3,6 +3,7 @@
         display: none;
     }
 
+
     nav {
         display: block;
     }
@@ -11,13 +12,15 @@
         padding: 10px;
     }
 
-    nav > ul {
+
+    nav > ul.menuResponsivo {
         display: flex;
         justify-content: space-around;
         background-image:  linear-gradient(to bottom, rgb(36, 36, 36), rgb(0, 0, 0));
     }
 
     nav > ul > li {
+       
         padding: 10px;
         list-style: none
     }
@@ -45,7 +48,7 @@
         padding: 10px;
     }
 
-    nav > ul {
+    nav > ul.menuResponsivo {
         display: flex;
         justify-content: space-around;
         background-image:  linear-gradient(to bottom, rgb(36, 36, 36), rgb(0, 0, 0));
