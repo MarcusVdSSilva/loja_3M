@@ -71,7 +71,8 @@
 			$result = $this->conn->query($sql);
 			
 			if($result == true){
-				return $sql;
+                echo($sql);
+				return $result;
                 
 			}else{
 				die("Falha na consulta venda produto! - ". $sql);
