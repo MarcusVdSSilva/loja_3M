@@ -31,8 +31,7 @@ header("Access-Control-Allow-Headers: Content-Encoding");
                 $cpf_cnpj = preg_replace("/\D/", "", "$cpf_cnpj");
 
                 //CRIPTOGRAFIA
-                $password = $senha;
-                $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+                $hashedPassword = password_hash($senha, PASSWORD_BCRYPT);
 
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();
@@ -55,7 +54,7 @@ header("Access-Control-Allow-Headers: Content-Encoding");
 
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();
-                $cadastrar = $usuario->cadastrarCliente($nome,$cpf_cnpj,$email,$hashedPassword,$telefone);
+                $cadastrar = $usuario->cadastrarCliente($nome,$cpf_cnpj,$email,$senha,$telefone);
 
                 return;
             }
