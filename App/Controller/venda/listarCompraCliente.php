@@ -18,9 +18,9 @@ require('../../Model/venda_produto.php');
             while($linha = $listar->fetch_assoc()){
                 $informacoesVenda[]=$linha;
             }
-            echo(json_encode($informacoesVenda));
-            foreach($informacoesVenda as $infoVenda){
 
+            foreach($informacoesVenda as $infoVenda){
+                echo($infoVenda);
                 $produto = new venda_produto();
                 $infoVenda->produtos = $produto->listar($infoVenda->id);
             }
