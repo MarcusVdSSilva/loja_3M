@@ -105,22 +105,20 @@
 		}
 
         //Cadastrar
-        public function cadastrar($valor,$data,$id_usuario,$id_produto){
-            $sql= "insert into $this->tabela(valor,data,id_usuario) values(?,?,?)";
+        public function cadastrar($valor,$id_usuario, $produtos){
+            $sql= "insert into $this->tabela(valor,id_usuario) values(?,?)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->bind_param('sss', $valor,$data,$id_usuario);
+            $stmt->bind_param('sss', $valor,$id_usuario);
             $stmt->execute();
             if($stmt==true){
                 $id = $this->conn->insert_id;
                 require_once("venda_produto.php");
 
                 //SALVANDO NO BANCO
-
-                $produto = $id_produto;
                 
-                foreach ($produto as $item) {
+                foreach ($produtos as $item) {
                     $venda_produto = new Venda_produto();
-                    $cadastrar = $venda_produto->cadastrar($id, $item);
+                    $venda_produto->cadastrar($id, $item);
                 }
                 
             }else{
