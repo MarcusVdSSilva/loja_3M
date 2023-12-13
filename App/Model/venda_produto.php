@@ -61,7 +61,7 @@
 
             "FROM $this->tabela VDP ". 
 
-            "INNER JOIN PRODUTOS PRO ".
+            "INNER JOIN PRODUTO PRO ".
             "ON VDP.ID_PRODUTO = PRO.ID ". 
 
             "INNER JOIN VENDA VND ".
