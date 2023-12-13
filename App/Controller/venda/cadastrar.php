@@ -10,6 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         $informacoes=json_decode($_POST['venda']);
         $valor = $informacoes->valor;
         $produtos = $informacoes->produtos;
+        echo(json_encode($produtos));
         $id_usuario = $_POST["usuarioId"];
         
         //SALVANDO NO BANCO

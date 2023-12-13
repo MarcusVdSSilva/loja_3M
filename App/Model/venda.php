@@ -116,7 +116,7 @@
 
                 //SALVANDO NO BANCO
                 
-                foreach ($produtos as $item) {
+                foreach($produtos as $item) {
                     $venda_produto = new Venda_produto();
                     $venda_produto->cadastrar($id, $item);
                 }
