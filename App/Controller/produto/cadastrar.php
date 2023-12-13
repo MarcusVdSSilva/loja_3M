@@ -13,7 +13,7 @@
             $preco = $_POST['preco'];
 
             $nomeArquivo = $_FILES["imagem"]["name"];
-            $imagem = $_FILES["imagem"]["tmp_name"];
+            $imagem = $_FILES["imagem"]["name"];
             $diretorioImagens = "../../../Assets/img/img_produtos/";
 
             $foto = $diretorioImagens . $nomeArquivo;
