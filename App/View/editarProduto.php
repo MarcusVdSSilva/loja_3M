@@ -1,7 +1,7 @@
 <?php 
     session_start();
-	if(isset($_SESSION['logado'])&& isset($_SESSION['status']) && isset($_SESSION['perfil'])){
-        if($_SESSION['perfil']=="2"){
+	// if(isset($_SESSION['logado'])&& isset($_SESSION['status']) && isset($_SESSION['perfil'])){
+    //     if($_SESSION['perfil']=="2"){
 ?>
 
 <!DOCTYPE html>
@@ -30,10 +30,10 @@
 </html>
 
 <?php 
-        }else{
-            header('Location: login.php');
-        }
-    }else{
-        header('Location: login.php');
-    }
+    //     }else{
+    //         header('Location: login.php');
+    //     }
+    // }else{
+    //     header('Location: login.php');
+    // }
 ?>
