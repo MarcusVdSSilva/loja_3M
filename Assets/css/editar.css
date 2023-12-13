@@ -40,3 +40,8 @@ input {
         background-color: #032C42;
         color: white;
     }
+
+    div.botao > form > button {
+        transform: translateX(10px);
+        width: 20vw;
+    }
