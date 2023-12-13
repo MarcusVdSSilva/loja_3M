@@ -22,7 +22,10 @@ header("Access-Control-Allow-Headers: Content-Encoding");
         $fotoCripto = $foto;
         $fotoCripto = base64_encode($fotoCripto);
 
-        echo "$foto";
+        $parteARemover = "../";
+        $novoCaminho = str_replace($parteARemover, "", $foto);
+        echo $foto;
+        echo $novoCaminho;
 
         echo('
             <form action="../Controller/produto/editar.php?i='.$idCripto.'&f='.$fotoCripto.'" method="post" enctype="multipart/form-data">
