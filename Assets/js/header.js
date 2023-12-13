@@ -14,3 +14,18 @@ $(window).on('click', function enventoClick(evento){
         return; }
     $(".dropdownMenu").hide();
 });
+
+// $('.link').mouseleave(() => {   
+//   $('.cor').css('color', 'white');
+// })
+
+
+$('#menuResponsivo li').each(function() {
+    $(this).mouseenter(() => {   
+    $(this).children().css('color', 'black');
+    });
+    $(this).mouseleave(() => {   
+      $(this).children().css('color', 'white');
+});
+});
+
