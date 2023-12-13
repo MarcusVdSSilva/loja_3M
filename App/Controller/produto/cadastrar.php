@@ -13,7 +13,7 @@
             $preco = $_POST['preco'];
 
             $nomeArquivo = $_FILES["imagem"]["name"];
-            $imagem = $_FILES["imagem"]["name"];
+            $imagem = $_FILES["imagem"]["tmp_name"];
             $diretorioImagens = "../../../Assets/img/img_produtos/";
 
             $foto = $diretorioImagens . $nomeArquivo;
@@ -30,7 +30,7 @@
             move_uploaded_file($_FILES['imagem']["tmp_name"],$foto);
 
             $image64 = base64_encode(file_get_contents($imagem));
-            
+
             //SALVANDO NO BANCO
             $produto = new Produto();
             $cadastrar = $produto->cadastrar($nome,$marca,$preco,$foto,$image64);
