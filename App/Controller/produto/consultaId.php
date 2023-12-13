@@ -25,7 +25,7 @@ header("Access-Control-Allow-Headers: Content-Encoding");
         $parteARemover = "../";
         $novoCaminho = str_replace($parteARemover, "", $foto);
         echo $foto;
-        echo "../$novoCaminho";
+        echo '<img src="../../'.$novoCaminho.'" alt="imagem do produto">';
 
         echo('
             <form action="../Controller/produto/editar.php?i='.$idCripto.'&f='.$fotoCripto.'" method="post" enctype="multipart/form-data">

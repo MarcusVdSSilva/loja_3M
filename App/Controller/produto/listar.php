@@ -29,7 +29,7 @@ header("Access-Control-Allow-Headers: Content-Encoding");
                     <td>' . $nome . ' </td>
                     <td>' . $marca . ' </td>
                     <td>' . $preco . ' </td>
-                    <td> <img src="../../'.$novoCaminho.'" alt="imagem do produto" </td>
+                    <td> <img src="../../'.$novoCaminho.'" alt="imagem do produto"> </td>
                     <td> <a href="editarProduto.php?i='.$idCripto.'"><span class="material-symbols-outlined">edit</span></a> </td>
                     
                 <tr>
