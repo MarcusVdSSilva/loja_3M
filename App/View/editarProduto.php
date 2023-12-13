@@ -19,6 +19,8 @@
 
     <div class="edit"><?php require_once("../Controller/produto/consultaId.php");?></div>
 
+    <input type="file" name="" id="" value="../../Assets/img/ img_produtos/background.php">
+
     
             
 
