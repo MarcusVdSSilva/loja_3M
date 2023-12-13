@@ -31,3 +31,11 @@ div.bloco {
 div.bloco > p {
     margin: 80%;
 }
+
+img {
+    position: absolute;
+    z-index: 1;
+    width: 60vw;
+    top: calc(30vh - 20vw);
+    left: calc(40vw - 20vw);
+}
