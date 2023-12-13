@@ -1,4 +1,8 @@
 <?php 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Headers: Content-Encoding");
     require_once ('../../Model/usuario.php');
 
     if(isset($_GET['logar'])){
@@ -9,11 +13,6 @@
                 
                 $email = $_REQUEST['email'];
                 $senha = $_REQUEST['senha'];
-
-                //CRIPTOGRAFIA
-                $salt = md5('cpf');
-                $senhacript = crypt($senha,$salt);
-                $senha = hash('sha512',$senhacript);
                 
                 //Salvando no banco
                 $usuario = new Usuario();
@@ -25,14 +24,10 @@
     }else{
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             if(isset($_POST['credenciais'])){
+
                 $credenciais=json_decode($_POST['credenciais']);
                 $email = $credenciais->email;
                 $senha = $credenciais->senha;
-
-                //CRIPTOGRAFIA
-                $salt = md5('cpf');
-                $senhacript = crypt($senha,$salt);
-                $senha = hash('sha512',$senhacript);
 
                 //Salvando no banco
                 $usuario = new Usuario();

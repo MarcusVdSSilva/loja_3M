@@ -1,4 +1,8 @@
 <?php 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Headers: Content-Encoding");
     require_once ('../../Model/usuario.php');
 
     //SE FOR MANDADO VIA WEB
@@ -40,18 +44,14 @@
     }else{
         //SE FOR MANDADO VIA MOBILE
         if($_SERVER['REQUEST_METHOD'] == "POST"){
-            if(isset($_POST['cadastrarCliente'])){
+            if(isset($_POST['cadastrarCliente']) && isset($_POST["senha"])){
+
                 $informacoes = json_decode($_POST['cadastrarCliente']);
                 $nome = $informacoes->nome;
-                $cpf_cnpj = $informacoes->cpf_cnpj;
+                $cpf_cnpj = $informacoes->cpfCnpj;
                 $email = $informacoes->email;
-                $senha = $informacoes->senha;
+                $senha = $_POST["senha"];
                 $telefone = $informacoes->telefone;
-
-                
-                //FILTRO
-                $telefone = preg_replace("/\D/", "", "$telefone");
-                $cpf_cnpj = preg_replace("/\D/", "", "$cpf_cnpj");
 
                 //CRIPTOGRAFIA
                 $password = $senha;
@@ -59,11 +59,14 @@
 
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();
-                $cadastrar = $usuario->cadastrarCliente($nome,$cpf_cnpj,$email,$$hashedPassword,$telefone);
+                $cadastrar = $usuario->cadastrarCliente($nome,$cpf_cnpj,$email,$hashedPassword,$telefone);
 
                 return;
             }
         }
+
+        
+
     }
 
     

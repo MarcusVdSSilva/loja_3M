@@ -1,4 +1,8 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Headers: Content-Encoding");
     require('../Model/produto.php');
     $produto = new Produto();
     
@@ -29,9 +33,6 @@
 
                 <label for="preco">Digite o valor do produto(R$):</label>
                 <input type="text" name="preco" id="preco" value='.$preco.'>
-
-                <label for="imagem">Escolha uma imagem para o produto:</label>
-                <input type="file" name="imagem" id="imagem" accept="image/*">
 
                 <button type="submit">Salvar Alterações</button>
 

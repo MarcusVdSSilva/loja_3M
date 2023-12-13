@@ -1,7 +1,7 @@
 <?php 
     session_start();
-	if(isset($_SESSION['logado'])&& isset($_SESSION['status']) && isset($_SESSION['perfil'])){
-        if($_SESSION['perfil']=="2"){
+	// if(isset($_SESSION['logado'])&& isset($_SESSION['status']) && isset($_SESSION['perfil'])){
+    //     if($_SESSION['perfil']=="2"){
 ?>
 
 <!DOCTYPE html>
@@ -17,10 +17,7 @@
     <?php require_once("header.php");?>
 
 
-    <div class="edit"><?php require_once("../Controller/produto/consultaId.php");?></div>
-
-    
-            
+    <div class="edit"><?php require_once("../Controller/produto/consultaId.php");?></div>        
 
     <script src="../../Assets/js/jquery.js"></script>
     <script src="../../Assets/js/modal.js"></script>
@@ -30,10 +27,10 @@
 </html>
 
 <?php 
-        }else{
-            header('Location: login.php');
-        }
-    }else{
-        header('Location: login.php');
-    }
+    //     }else{
+    //         header('Location: login.php');
+    //     }
+    // }else{
+    //     header('Location: login.php');
+    // }
 ?>

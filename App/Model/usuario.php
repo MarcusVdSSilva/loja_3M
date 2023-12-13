@@ -195,20 +195,22 @@
         public function logar($email,$senha){
             $sql= "select * from $this->tabela where email = ? ";
             $stmt = $this->conn->prepare($sql);
-            $stmt->bind_param('ss', $email, $senha);
+            $stmt->bind_param('s', $email);
             $stmt->execute();
             $stmt->store_result();
 			
 			if($stmt->num_rows == 1){
-                $stmt->bind_result($id,$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senhaHash);
+                $stmt->bind_result($id,$perfil,$status,$nome,$cpf_cnpj,$email,$senhaHash,$telefone);
                 $stmt->fetch();
 
                 if(!password_verify($senha, $senhaHash)){
-                    header('Location: login.php?error=acessonegado');
+                    //header('Location: ../../View/login.php?error=acessonegado');
+                    echo("$senha   hash  $senhaHash");
+                    
                     return;
                 }
     
-                if($status=="A" && $perfil!=="0"){
+                //if($status=="A" && $perfil!=="0"){
                     session_start();
                     $_SESSION['logado'] = true;
                     $_SESSION['id'] = $id;
@@ -216,9 +218,9 @@
                     $_SESSION['status'] = $status;
                 
                     header("Location: ../../View/home.php");
-                }else{
-                    header('Location: login.php?error=acessonegado');
-                }
+                // }else{
+                //     header('Location: ../../View/login.php?error=acessonegado');
+                // }
 				
 			}else{
                 echo "ERROR";
@@ -233,12 +235,12 @@
         public function logarcliente($email,$senha){
             $sql= "select * from $this->tabela where email = ? ";
             $stmt = $this->conn->prepare($sql);
-            $stmt->bind_param('ss', $email, $senha);
+            $stmt->bind_param('s', $email);
             $stmt->execute();
             $stmt->store_result();
 			
 			if($stmt->num_rows == 1){
-                $stmt->bind_result($id,$perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senhaHash);
+                $stmt->bind_result($id,$perfil,$status,$nome,$cpf_cnpj,$email, $senhaHash, $telefone);
                 $stmt->fetch();
 
                 if($status=="A" && $perfil=="0"){
@@ -257,7 +259,7 @@
                         echo json_encode($dadosCliente);
                     }
                     else{
-                        echo("NULL");
+                        echo($senha."  -  ".$senhaHash);
                     }
                     
                 }else{
@@ -265,7 +267,7 @@
                 }
 				
 			}else{
-                echo "ERROR";
+                echo "ERROR não achou";
                 //header('Location: login.php?erro=login');
 			}
 			$stmt->close();
