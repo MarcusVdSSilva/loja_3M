@@ -25,7 +25,7 @@ header("Access-Control-Allow-Headers: Content-Encoding");
         $parteARemover = "../";
         $novoCaminho = str_replace($parteARemover, "", $foto);
         echo $foto;
-        echo $novoCaminho;
+        echo "../$novoCaminho";
 
         echo('
             <form action="../Controller/produto/editar.php?i='.$idCripto.'&f='.$fotoCripto.'" method="post" enctype="multipart/form-data">
@@ -40,7 +40,7 @@ header("Access-Control-Allow-Headers: Content-Encoding");
                 <input type="text" name="preco" id="preco" value='.$preco.'>
 
                 <label for="imagem">Escolha uma imagem para o produto:</label>
-                <input type="file" name="imagem" id="imagem" value='.$foto.' accept="image/*">
+                <input type="file" name="imagem" id="imagem" value=../../'.$novoCaminho.' accept="image/*">
 
                 <button type="submit">Salvar Alterações</button>
 
