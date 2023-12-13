@@ -1,3 +1,65 @@
 @media screen and (min-width: 768px) and (max-width: 1025px){
-    
+    div.mobile > button, div.mobile > ul {
+        display: none;
+    }
+
+    nav {
+        display: block;
+    }
+
+    nav > div {
+        padding: 10px;
+    }
+
+    nav > ul {
+        display: flex;
+        justify-content: space-around;
+        background-image:  linear-gradient(to bottom, rgb(36, 36, 36), rgb(0, 0, 0));
+    }
+
+    nav > ul > li {
+        padding: 10px;
+        list-style: none
+    }
+
+    nav > ul > li > a { 
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+
+}
+
+@media screen and (min-width: 1026px) {
+    div.mobile > button, div.mobile > ul {
+        display: none;
+    }
+
+    nav {
+        display: block;
+    }
+
+    nav > div {
+        padding: 10px;
+    }
+
+    nav > ul {
+        display: flex;
+        justify-content: space-around;
+        background-image:  linear-gradient(to bottom, rgb(36, 36, 36), rgb(0, 0, 0));
+    }
+
+    nav > ul > li {
+        padding: 10px;
+        list-style: none
+    }
+
+    nav > ul > li > a { 
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
 }

@@ -30,6 +30,7 @@
             <th>Marca</th>
             <th>Preço</th>
             <th>imagem</th>
+            <th>Editar</th>
         </thead>
 
         <tbody>

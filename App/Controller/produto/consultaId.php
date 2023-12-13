@@ -22,10 +22,6 @@ header("Access-Control-Allow-Headers: Content-Encoding");
         $fotoCripto = $foto;
         $fotoCripto = base64_encode($fotoCripto);
 
-        $parteARemover = "../";
-        $novoCaminho = str_replace($parteARemover, "", $foto);
-        echo '<img src="../../'.$novoCaminho.'" alt="imagem do produto">';
-
         echo('
             <form action="../Controller/produto/editar.php?i='.$idCripto.'&f='.$fotoCripto.'" method="post" enctype="multipart/form-data">
                 
@@ -37,9 +33,6 @@ header("Access-Control-Allow-Headers: Content-Encoding");
 
                 <label for="preco">Digite o valor do produto(R$):</label>
                 <input type="text" name="preco" id="preco" value='.$preco.'>
-
-                <label for="imagem">Escolha uma imagem para o produto:</label>
-                <input type="file" name="imagem" id="imagem" value="../../'.$novoCaminho.'" accept="image/*">
 
                 <button type="submit">Salvar Alterações</button>
 
