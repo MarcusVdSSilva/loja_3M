@@ -75,8 +75,7 @@
 				return $result;
                 
 			}else{
-                echo($idVenda);
-				die("Falha na consulta venda produto! - ". $sql);
+				die("Falha na consulta venda produto! - ". $idVenda);
 			}
 
             $this->conn->close();
