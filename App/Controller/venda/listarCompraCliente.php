@@ -19,8 +19,8 @@ require('../../Model/venda_produto.php');
                 $informacoesVenda[]=$linha;
             }
 
-            echo(json_encode($informacoesVenda));
             foreach($informacoesVenda as $infoVenda){
+                echo(json_encode($infoVenda));
                 $produto = new venda_produto();
                 $infoVenda->produtos = $produto->listar($infoVenda->id);
             }
