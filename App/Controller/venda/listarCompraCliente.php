@@ -19,24 +19,24 @@ require('../../Model/venda_produto.php');
                 $informacoesVenda[]=$linha;
             }
             
-            echo(json_encode($informacoesVenda));
             foreach($informacoesVenda as $infoVenda){
 
                 $produto = new venda_produto();
 
-                $listarProd = $produto->listar($infoVenda->id);
+                echo($infoVenda->id_venda);
+
+                $listarProd = $produto->listar($infoVenda->id_venda);
                 $infoProd = array();
 
                 while($linhaProd = $listarProd->fetch_assoc()){
                     $infoProd[]=$linhaProd;
                 }
 
-                echo(json_encode($infoProd));
-
                 $infoVenda->produtos = $infoProd;
 
             }
 
+            echo(json_encode($informacoesVenda));
 
         }
     
