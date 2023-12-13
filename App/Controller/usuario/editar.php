@@ -37,7 +37,7 @@ header("Access-Control-Allow-Headers: Content-Encoding");
 
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();
-                $editar = $usuario->editar($perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$senha,$id);
+                $editar = $usuario->editar($perfil,$status,$nome,$cpf_cnpj,$email,$telefone,$hashedPassword,$id);
             }
         
         }
