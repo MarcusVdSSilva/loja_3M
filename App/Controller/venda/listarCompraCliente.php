@@ -9,20 +9,15 @@ require('../../Model/venda_produto.php');
         if(isset($_POST['usuarioId'])){
             $idCliente = $_POST['usuarioId'];
             
-            $venda = new Venda();
+            $vendas = new Venda();
 
-            $listar = $venda->listarVendaCliente($idCliente);
-                    
-            $informacoesVenda = array();
+            $vendas->listarVendaCliente($idCliente);
 
-            while($linha = $listar->fetch_assoc()){
-                $informacoesVenda[]=$linha;
-            }
-
-            foreach($informacoesVenda as $infoVenda){
-                echo($infoVenda);
+            echo(json_encode($vendas));
+            foreach($vendas as $venda){
+                echo(json_encode($venda));
                 $produto = new venda_produto();
-                $infoVenda->produtos = $produto->listar($infoVenda->id);
+                $venda->produtos = $produto->listar($venda->id);
             }
         }
     
