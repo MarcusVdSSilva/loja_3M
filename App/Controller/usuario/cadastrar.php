@@ -48,7 +48,7 @@ header("Access-Control-Allow-Headers: Content-Encoding");
                 $informacoes = json_decode($_POST['cadastrarCliente']);
                 echo(json_encode($informacoes));
                 $nome = $informacoes->nome;
-                $cpf_cnpj = $informacoes->$cpf_cnpj;
+                $cpf_cnpj = $informacoes->cpf_cnpj;
                 $email = $informacoes->email;
                 $senha = $_POST["senha"];
                 $telefone = $informacoes->telefone;
