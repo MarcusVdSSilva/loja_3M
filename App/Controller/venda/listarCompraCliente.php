@@ -3,11 +3,12 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Access-Control-Allow-Headers: Content-Encoding");
-    require('../../Model/venda.php');
+require('../../Model/venda.php');
+require('../../Model/produto.php');
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){      
         if(isset($_POST['usuarioId'])){
-            $idCliente = $informacoes->usuarioId;
+            $idCliente = $_POST['usuarioId'];
             
             $venda = new Venda();
 
@@ -19,7 +20,10 @@ header("Access-Control-Allow-Headers: Content-Encoding");
                 $informacoesVenda[]=$linha;
             }
 
-            echo json_encode($informacoesVenda);
+            foreach($informacoesVenda as $infoVenda){
+                $produto = new venda_produto();
+                $infoVenda->produtos = $produto->listar($infoVenda->id);
+            }
         }
     
     }

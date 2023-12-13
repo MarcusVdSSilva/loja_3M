@@ -48,5 +48,37 @@
 			$this->conn->close();
             
         }
+		public function listar($idVenda){
+			$sql = 
+            "SELECT ".
+            "  PRO.ID, ".
+            "  PRO.NOME, ".
+            "  PRO.MARCA, ".
+            "  PRO.PRECO, ".
+            "  PRO.FOTO64, ".
+            "  VDP.QUANTIDADE ".
+
+            "FROM $this->tabela VDP ". 
+
+            "INNER JOIN PRODUTOS PRO ".
+            "ON VDP.ID_PRODUTO = PRO.ID ". 
+
+            "INNER JOIN VENDA VND ".
+            "ON VDP.ID_VENDA = VND.ID ".
+            "WHERE VND.ID =$idVenda ";
+            
+			$result = $this->conn->query($sql);
+			
+			if($result == true){
+				return $result;
+                
+			}else{
+				die("Falha na consulta!");
+			}
+
+            $this->conn->close();
+		}
+        
+
     }
 ?>

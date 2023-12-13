@@ -76,17 +76,11 @@
 			$sql = "SELECT 
             v.id as id_venda,
             v.valor,
-            v.data,
-            u.nome as nome_usuario,
-            p.nome as nome_produto
+            v.data
         FROM 
             venda v
         JOIN 
             usuario u ON v.id_usuario = u.id
-        JOIN 
-            venda_produto vp ON v.id = vp.id_venda
-        JOIN 
-            produto p ON vp.id_produto = p.id
         WHERE 
             v.id_usuario = $idCliente
         ORDER BY 
