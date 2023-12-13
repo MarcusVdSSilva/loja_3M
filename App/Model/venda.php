@@ -76,7 +76,8 @@
 			$sql = "SELECT 
             v.id as id_venda,
             v.valor,
-            v.data
+            v.data,
+            1 as produtos
         FROM 
             venda v
         JOIN 

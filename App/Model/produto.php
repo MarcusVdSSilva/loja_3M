@@ -55,15 +55,8 @@
         //Metodos
 
         //Consulta geral
-		public function listar($id=null){
-			$sql = "SELECT * FROM $this->tabela";
-            
-            if($id != null){
-                $sql.="WHERE id=$id ";
-            }
-
-            $sql .= "ORDER BY nome ASC";
-            
+		public function listar(){
+			$sql = "SELECT * FROM $this->tabela ORDER BY nome ASC";
 			$result = $this->conn->query($sql);
 			
 			if($result == true){
