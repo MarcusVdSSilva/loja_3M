@@ -7,7 +7,7 @@ create table produto(
 `marca` varchar(100) not null,
 `preco` float not null,
 `foto` varchar(100) not null,
-`foto64` varchar(255) not null
+`foto64` blob not null
 );
 
 create table usuario(
