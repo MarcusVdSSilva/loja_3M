@@ -71,7 +71,6 @@
 			$result = $this->conn->query($sql);
 			
 			if($result == true){
-                echo($sql);
 				return $result;
                 
 			}else{

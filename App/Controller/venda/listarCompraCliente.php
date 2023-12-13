@@ -19,11 +19,11 @@ require('../../Model/venda_produto.php');
                 $informacoesVenda[]=$linha;
             }
             
+            $resultado = [];
+
             foreach($informacoesVenda as $infoVenda){
                 $infoVenda = json_decode(json_encode($infoVenda));
                 $produto = new venda_produto();
-
-                echo($infoVenda->id_venda);
 
                 $listarProd = $produto->listar($infoVenda->id_venda);
                 $infoProd = array();
@@ -34,9 +34,11 @@ require('../../Model/venda_produto.php');
 
                 $infoVenda->produtos = $infoProd;
 
+                array_push($resultado, $infoVenda);
+
             }
 
-            echo(json_encode($informacoesVenda));
+            echo(json_encode($resultado));
 
         }
     
