@@ -52,21 +52,21 @@
 		public function listar($idVenda){
 			$sql = 
             "SELECT ".
-            "  PRO.ID, ".
-            "  PRO.NOME, ".
-            "  PRO.MARCA, ".
-            "  PRO.PRECO, ".
-            "  PRO.FOTO64, ".
-            "  VDP.QUANTIDADE ".
+            "  PRO.id, ".
+            "  PRO.nome, ".
+            "  PRO.marca, ".
+            "  PRO.preco, ".
+            "  PRO.foto64, ".
+            "  VDP.quantidade ".
 
             "FROM $this->tabela VDP ". 
 
-            "INNER JOIN PRODUTO PRO ".
-            "ON VDP.ID_PRODUTO = PRO.ID ". 
+            "INNER JOIN produto PRO ".
+            "ON VDP.id_produto = PRO.id ". 
 
-            "INNER JOIN VENDA VND ".
-            "ON VDP.ID_VENDA = VND.ID ".
-            "WHERE VND.ID =$idVenda ";
+            "INNER JOIN venda VND ".
+            "ON VDP.id_venda = VND.id ".
+            "WHERE VND.id=$idVenda ";
             
 			$result = $this->conn->query($sql);
 			
