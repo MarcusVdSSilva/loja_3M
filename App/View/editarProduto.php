@@ -17,12 +17,7 @@
     <?php require_once("header.php");?>
 
 
-    <div class="edit"><?php require_once("../Controller/produto/consultaId.php");?></div>
-
-    <input type="file" name="" id="" value="../../Assets/img/ img_produtos/background.php">
-
-    
-            
+    <div class="edit"><?php require_once("../Controller/produto/consultaId.php");?></div>        
 
     <script src="../../Assets/js/jquery.js"></script>
     <script src="../../Assets/js/modal.js"></script>
