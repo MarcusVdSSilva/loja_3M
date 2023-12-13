@@ -40,7 +40,7 @@ header("Access-Control-Allow-Headers: Content-Encoding");
                 <input type="text" name="preco" id="preco" value='.$preco.'>
 
                 <label for="imagem">Escolha uma imagem para o produto:</label>
-                <input type="file" name="imagem" id="imagem" value=../../'.$novoCaminho.' accept="image/*">
+                <input type="file" name="imagem" id="imagem" value="../../'.$novoCaminho.'" accept="image/*">
 
                 <button type="submit">Salvar Alterações</button>
 
