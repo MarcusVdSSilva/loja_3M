@@ -108,7 +108,7 @@
         public function cadastrar($valor,$id_usuario, $produtos){
             $sql= "insert into $this->tabela(valor,id_usuario) values(?,?)";
             $stmt = $this->conn->prepare($sql);
-            $stmt->bind_param('sss', $valor,$id_usuario);
+            $stmt->bind_param('ss', $valor,$id_usuario);
             $stmt->execute();
             if($stmt==true){
                 $id = $this->conn->insert_id;
