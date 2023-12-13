@@ -20,7 +20,7 @@ require('../../Model/venda_produto.php');
             }
 
             foreach($informacoesVenda as $infoVenda){
-                echo(json_encode($infoVenda));
+                echo($infoVenda);
                 $produto = new venda_produto();
                 $infoVenda->produtos = $produto->listar($infoVenda->id);
             }
