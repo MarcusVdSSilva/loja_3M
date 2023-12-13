@@ -119,6 +119,7 @@
             $stmt->bind_param('sssss', $nome,$cpf_cnpj,$email,$senha,$telefone);
             $stmt->execute();
             if($stmt==true){
+                echo($sql.$nome.$cpf_cnpj.$email.$senha.$telefone);
                 $this->logar($email,$senha);
                 return $stmt;
             }else{
