@@ -21,6 +21,7 @@ require('../../Model/venda_produto.php');
 
             foreach($informacoesVenda as $infoVenda){
                 $vendaCliente = json_decode(json_encode($infoVenda));
+                echo($vendaCliente);
                 $produto = new venda_produto();
                 $vendaCliente->produtos = $produto->listar($vendaCliente->id);
             }
