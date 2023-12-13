@@ -66,7 +66,7 @@
 
             "INNER JOIN venda VND ".
             "ON VDP.id_venda = VND.id ".
-            "WHERE VND.id=$idVenda ";
+            "WHERE VND.id= ".$idVenda;
             
 			$result = $this->conn->query($sql);
 			
