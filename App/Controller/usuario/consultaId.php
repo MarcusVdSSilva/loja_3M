@@ -41,6 +41,11 @@ header("Access-Control-Allow-Headers: Content-Encoding");
                 </div>
                 
                 <div>
+                    <label for="senha">Senha</label>
+                    <input type="text" name="senha" id="senha">
+                </div>
+                
+                <div>
                     <label for="telefone">Telefone</label>
                     <input type="text" name="telefone" id="telefone" value="'.$telefone.'">
                 </div>
