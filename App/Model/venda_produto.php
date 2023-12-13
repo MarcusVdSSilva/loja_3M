@@ -74,7 +74,7 @@
 				return $result;
                 
 			}else{
-				die("Falha na consulta!");
+				die("Falha na consulta venda produto!");
 			}
 
             $this->conn->close();
