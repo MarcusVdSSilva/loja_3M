@@ -46,7 +46,8 @@
             v.valor,
             v.data,
             u.nome as nome_usuario,
-            p.nome as nome_produto
+            p.nome as nome_produto,
+            vp.quantidade as quantidade_produto
             FROM 
                 venda v
             JOIN 

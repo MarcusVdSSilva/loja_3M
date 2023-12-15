@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Access-Control-Allow-Headers: Content-Encoding");
-    require('../Model/venda.php');
+require('../Model/venda.php');
     $venda = new Venda();
 
     $listar = $venda->listar();
@@ -15,6 +15,7 @@ header("Access-Control-Allow-Headers: Content-Encoding");
         $data = $linha['data'];
         $nomeCliente = $linha['nome_usuario'];
         $produto = $linha['nome_produto'];
+        $produto = $linha['quantidade_produto'];
         
         
         echo('
@@ -24,6 +25,7 @@ header("Access-Control-Allow-Headers: Content-Encoding");
                 <td>' . $data . ' </td>
                 <td>' . $nomeCliente . ' </td>
                 <td>' . $produto . ' </td>
+                <td>' . $quantidade . ' </td>
             <tr>
         ');
 

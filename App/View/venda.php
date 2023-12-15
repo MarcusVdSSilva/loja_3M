@@ -24,6 +24,7 @@
             <th>Data</th>
             <th>Nome do Cliente</th>
             <th>Produto</th>
+            <th>Quantidade</th>
         </thead>
 
         <tbody>
