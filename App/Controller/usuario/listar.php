@@ -46,7 +46,8 @@ header("Access-Control-Allow-Headers: Content-Encoding");
                 <td>' . $cpf_cnpj . '</td>
                 <td>' . $email . '</td>
                 <td>' . $telefone . '</td>
-                <td><a href="editarUsuario.php?i='.$idCripto.'"><span class="material-symbols-outlined">edit</span></a></td>
+                <td><a href="editarUsuario.php?i='.$idCripto.'"><span class="material-symbols-outlined">edit</span></a>
+                </td>
             </tr>
             ');
             
