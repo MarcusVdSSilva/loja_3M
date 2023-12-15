@@ -78,8 +78,12 @@
         margin-bottom: 100px;
     }
 
+    div.carrossel {
+        transform: translateY(-70px);
+    }
+
     div.carrossel > div.images {
-    width: 300px;
+    width: 250px;
     }
 
     div.carrossel > button > span {
