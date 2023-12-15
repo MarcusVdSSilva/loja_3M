@@ -27,8 +27,8 @@
                 <option value="2">Administradores</option>
             </select>
             <button type="submit"><span class="material-symbols-outlined">search</span></button>
-        </form>
-        <button type="button" id="btnAdcUser" class="center adicionar">Adicionar +</button> -->
+        </form> -->
+        <button type="button" id="btnAdcUser" class="center adicionar">Adicionar +</button>
         <table>
             <thead>
                 <th>Nome</th>
