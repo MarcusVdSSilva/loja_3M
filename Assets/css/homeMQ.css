@@ -1,0 +1,18 @@
+@media screen and (min-width: 768px) and (max-width: 1025px){
+    img {
+        position: absolute;
+        width: 40vw;
+        top: calc(40vh - 20vw);
+        left: calc(50vw - 20vw);
+    }
+
+}
+
+@media screen and (min-width: 1026px) {
+    img {
+        position: absolute;
+        width: 20vw;
+        top: calc(65vh - 20vw);
+        left: calc(60vw - 20vw);
+    }
+}
