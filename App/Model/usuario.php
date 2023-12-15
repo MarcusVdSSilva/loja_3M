@@ -220,7 +220,7 @@
                     return;
                 }
     
-                //if($status=="A" && $perfil!=="0"){
+                if($status=="A" && $perfil!=="0"){
                     session_start();
                     $_SESSION['logado'] = true;
                     $_SESSION['id'] = $id;
@@ -228,9 +228,9 @@
                     $_SESSION['status'] = $status;
                 
                     header("Location: ../../View/home.php");
-                // }else{
-                //     header('Location: ../../View/login.php?error=acessonegado');
-                // }
+                 }else{
+                     header('Location: ../../View/login.php?error=acessonegado');
+                 }
 				
 			}else{
                 echo "ERROR ".$sql.$email;
