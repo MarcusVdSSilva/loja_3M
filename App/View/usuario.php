@@ -18,7 +18,7 @@
     <?php require_once("header.php");?>
 
    
-        <form id="consultaForm" class="center">
+        <!-- <form id="consultaForm" class="center">
             <input type="text" name="nome" id="nome" placeholder="Busca por nome">
             <select name="perfil">
                 <option value="" selected>Todos</option>
@@ -28,7 +28,7 @@
             </select>
             <button type="submit"><span class="material-symbols-outlined">search</span></button>
         </form>
-        <button type="button" id="btnAdcUser" class="center adicionar">Adicionar +</button>
+        <button type="button" id="btnAdcUser" class="center adicionar">Adicionar +</button> -->
         <table>
             <thead>
                 <th>Nome</th>
@@ -51,27 +51,27 @@
     <script src="../../Assets/js/jquery.js"></script>
     <script src="../../Assets/js/modal.js"></script>
     <script>
-        $(document).ready(function() {
-        $("#consultaForm").submit(function(event) {
-        event.preventDefault();
+//         $(document).ready(function() {
+//         $("#consultaForm").submit(function(event) {
+//         event.preventDefault();
 
-        // pegando dados do form
-        var formData = $(this).serialize();
+//         // pegando dados do form
+//         var formData = $(this).serialize();
 
-        // Enviando a requisição AJAX
-        $.ajax({
-            type: "GET",
-            url: "../Controller/usuario/consultaNome.php",
-            data: formData,
-            success: function(response) {
-                $("tbody").html(response);
-            },
-            error: function(error) {
-                console.log("Erro na requisição AJAX:", error);
-            }
-        });
-    });
-});
+//         // Enviando a requisição AJAX
+//         $.ajax({
+//             type: "GET",
+//             url: "../Controller/usuario/consultaNome.php",
+//             data: formData,
+//             success: function(response) {
+//                 $("tbody").html(response);
+//             },
+//             error: function(error) {
+//                 console.log("Erro na requisição AJAX:", error);
+//             }
+//         });
+//     });
+// });
     </script>
     </body>
 </html>
