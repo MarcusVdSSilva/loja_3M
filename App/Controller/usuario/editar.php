@@ -45,27 +45,16 @@ header("Access-Control-Allow-Headers: Content-Encoding");
     }else{
         //SE FOR MANDADO VIA MOBILE
         if($_SERVER['REQUEST_METHOD'] == "POST"){
-            if(isset($_POST['editarCliente'])){
-                $informacoes = json_decode($_POST['editarCliente']);
-                $id = $informacoes->id;
-                $nome = $informacoes->nome;
-                $cpf_cnpj = $informacoes->cpf_cnpj;
-                $email = $informacoes->email;
-                $senha = $informacoes->senha;
-                $telefone = $informacoes->telefone;
-
-                
-                //FILTRO
-                $telefone = preg_replace("/\D/", "", "$telefone");
-                $cpf_cnpj = preg_replace("/\D/", "", "$cpf_cnpj");
-
-                //CRIPTOGRAFIA
-                $password = $senha;
-                $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+            if(isset($_POST['usuarioId'])){
+                $id = $_POST['usuarioId'];
+                $nome = $_POST['nome'];
+                $cpf_cnpj = $_POST['cpfCnpj'];
+                $email = $_POST['email'];
+                $telefone = $_POST['telefone'];
 
                 //SALVANDO NO BANCO
                 $usuario = new Usuario();
-                $editar = $usuario->editarCliente($nome,$cpf_cnpj,$email,$$hashedPassword,$telefone,$id);
+                $editar = $usuario->editarCliente($nome,$cpf_cnpj,$email,$telefone,$id);
 
                 return;
             }

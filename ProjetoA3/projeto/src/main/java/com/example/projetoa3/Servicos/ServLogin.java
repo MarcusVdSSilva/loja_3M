@@ -15,6 +15,7 @@ import java.util.HashMap;
 
 public class ServLogin {
     private static final String CADASTRAR_USUARIO = "usuario/cadastrar.php";
+    private static final String EDITAR_USUARIO = "usuario/editar.php";
     private static final String LOGAR_USUARIO = "usuario/logar.php";
 
     public static Retorno cadastrarUsuario(Usuarios usuario, String senha){
@@ -76,7 +77,7 @@ public class ServLogin {
         String telefone
     ) {
         Requisicao requisicao = new Requisicao(
-                Ambiente.getEnderecoServidor()+CADASTRAR_USUARIO,
+                Ambiente.getEnderecoServidor()+EDITAR_USUARIO,
                 MetodoRequisicao.POST,
                 TiposConteudosRequisicoes.URLENCODED
         );

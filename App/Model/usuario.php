@@ -153,11 +153,11 @@
         }
 
         //Editar Lado Do Cliente
-		public function editarCliente($nome,$cpf_cnpj,$email,$senha,$telefone,$id){
-			$sql = "UPDATE $this->tabela SET nome = ? , cpf_cnpj = ? , email = ? , senha = ? , telefone = ? 
+		public function editarCliente($nome,$cpf_cnpj,$email,$telefone,$id){
+			$sql = "UPDATE $this->tabela SET nome = ? , cpf_cnpj = ? , email = ?, telefone = ? 
 			WHERE id = ?";
 			$stmt = $this->conn->prepare($sql);
-			$stmt->bind_param('sssssi',$nome,$cpf_cnpj,$email,$senha,$telefone,$id);
+			$stmt->bind_param('ssssi',$nome,$cpf_cnpj,$email,$telefone,$id);
 			$stmt->execute();
 			
 			if($stmt == true){
