@@ -6,7 +6,7 @@
 
 
 <?php 
-    // if($_SESSION['perfil']=="2"){
+    if($_SESSION['perfil']=="2"){
 ?>
 
 <nav class="navbar" translate="no">
@@ -72,9 +72,9 @@ power_settings_new
 <script src="../../Assets/js/header.js"></script>
 
 <?php 
-    // }else if($_SESSION['perfil']=="1"){
+    }else if($_SESSION['perfil']=="1"){
 ?>
-<!-- 
+
 <nav class="navbar">
         
     <button id="dropdown" type="button">
@@ -100,9 +100,9 @@ power_settings_new
         </li>
     </ul> 
 </nav>
- -->
+ 
 <?php 
-    // }
+    }
 ?>
 
 <script src="../../Assets/js/jquery.js"></script>

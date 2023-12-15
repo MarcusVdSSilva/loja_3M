@@ -1,6 +1,6 @@
 <?php 
     session_start();
-	//if(isset($_SESSION['logado'])&& isset($_SESSION['status']) && isset($_SESSION['perfil'])){
+	if(isset($_SESSION['logado'])&& isset($_SESSION['status']) && isset($_SESSION['perfil'])){
 ?>
 
 <!DOCTYPE html>
@@ -26,8 +26,8 @@
 </html>
 
 <?php 
-    // }else{
-    //     header('Location: login.php');
-    // }
+    }else{
+        header('Location: login.php');
+    }
     
 ?>
