@@ -8,10 +8,11 @@
 }
 
  html {
-    height: 100vh;
+    height: 100%;
 }
 
 body{
+    height: 95%;
     background-image: radial-gradient(circle, #24688D, #032C42);
     background-size: contain;
     background-repeat: no-repeat;
@@ -72,6 +73,7 @@ div.carrossel {
 }
 
 div.carrossel > div.images {
+    width: 200px;
     display: block;
     transform: translateX(10px);
     margin: 0px 20px 0px 0px;
