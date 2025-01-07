@@ -1,4 +1,3 @@
-<?php 
-    header('Location: App/View/login.php');
-    //teste
-?>
+<?php
+
+header('Location: App/View/home.php');
